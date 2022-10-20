@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CollectorInterfaceDBModelStoreContainer" CdmEntityContainer="CollectorInterfaceDBEntities">
+    <EntitySetMapping Name="Areas">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.Area">
+        <MappingFragment StoreEntitySet="Areas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="DeviceName" ColumnName="DeviceName" />
+          <ScalarProperty Name="PowerVariable" ColumnName="PowerVariable" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Devices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.Device">
+        <MappingFragment StoreEntitySet="Devices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="IP" ColumnName="IP" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Controllable" ColumnName="Controllable" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="Area" ColumnName="Area" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DevicesTypes">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.DevicesType">
+        <MappingFragment StoreEntitySet="DevicesTypes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceType" ColumnName="DeviceType" />
+          <ScalarProperty Name="PostTime" ColumnName="PostTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnphaseDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.EnphaseDevice">
+        <MappingFragment StoreEntitySet="EnphaseDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="MicroInverters" ColumnName="MicroInverters" />
+          <ScalarProperty Name="NumberOfPanels" ColumnName="NumberOfPanels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EnphaseVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.EnphaseVariable">
+        <MappingFragment StoreEntitySet="EnphaseVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MicroInverterNumber" ColumnName="MicroInverterNumber" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FroniusDataManagerDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.FroniusDataManagerDevice">
+        <MappingFragment StoreEntitySet="FroniusDataManagerDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FroniusDataManagerVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.FroniusDataManagerVariable">
+        <MappingFragment StoreEntitySet="FroniusDataManagerVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="VectorPosition" ColumnName="VectorPosition" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FroniusDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.FroniusDevice">
+        <MappingFragment StoreEntitySet="FroniusDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="InverterNumber" ColumnName="InverterNumber" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="NumberOfPanels" ColumnName="NumberOfPanels" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FroniusVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.FroniusVariable">
+        <MappingFragment StoreEntitySet="FroniusVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="JsonName" ColumnName="JsonName" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModbusDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.ModbusDevice">
+        <MappingFragment StoreEntitySet="ModbusDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="UnitID" ColumnName="UnitID" />
+          <ScalarProperty Name="ScaleClass" ColumnName="ScaleClass" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="OrderClass" ColumnName="OrderClass" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ModbusVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.ModbusVariable">
+        <MappingFragment StoreEntitySet="ModbusVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="StartRegister" ColumnName="StartRegister" />
+          <ScalarProperty Name="Bytes" ColumnName="Bytes" />
+          <ScalarProperty Name="Scale" ColumnName="Scale" />
+          <ScalarProperty Name="Offset" ColumnName="Offset" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="RegisterType" ColumnName="RegisterType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmartMeterDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.SmartMeterDevice">
+        <MappingFragment StoreEntitySet="SmartMeterDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Port" ColumnName="Port" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="HighVoltage" ColumnName="HighVoltage" />
+          <ScalarProperty Name="LowVoltage" ColumnName="LowVoltage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SmartMeterVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.SmartMeterVariable">
+        <MappingFragment StoreEntitySet="SmartMeterVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Registry" ColumnName="Registry" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolarLogDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.SolarLogDevice">
+        <MappingFragment StoreEntitySet="SolarLogDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Capacity" ColumnName="Capacity" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="NumberOfPanels" ColumnName="NumberOfPanels" />
+          <ScalarProperty Name="HighVoltage" ColumnName="HighVoltage" />
+          <ScalarProperty Name="LowVoltage" ColumnName="LowVoltage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SolarLogVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.SolarLogVariable">
+        <MappingFragment StoreEntitySet="SolarLogVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Label" ColumnName="Label" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UbidotsDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.UbidotsDevice">
+        <MappingFragment StoreEntitySet="UbidotsDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UbidotsVariables">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.UbidotsVariable">
+        <MappingFragment StoreEntitySet="UbidotsVariables">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="DeviceID" ColumnName="DeviceID" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Unit" ColumnName="Unit" />
+          <ScalarProperty Name="ID_Ubidots" ColumnName="ID_Ubidots" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="VoltageControllerDevices">
+      <EntityTypeMapping TypeName="CollectorInterfaceDBModel.VoltageControllerDevice">
+        <MappingFragment StoreEntitySet="VoltageControllerDevices">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Device_ID" ColumnName="Device_ID" />
+          <ScalarProperty Name="Gvq" ColumnName="Gvq" />
+          <ScalarProperty Name="Gvg" ColumnName="Gvg" />
+          <ScalarProperty Name="Gvp" ColumnName="Gvp" />
+          <ScalarProperty Name="PFmin" ColumnName="PFmin" />
+          <ScalarProperty Name="Vnom" ColumnName="Vnom" />
+          <ScalarProperty Name="VoltageReference" ColumnName="VoltageReference" />
+          <ScalarProperty Name="Vmax" ColumnName="Vmax" />
+          <ScalarProperty Name="Vmin" ColumnName="Vmin" />
+          <ScalarProperty Name="VoltageVariable_ID" ColumnName="VoltageVariable_ID" />
+          <ScalarProperty Name="QVariable_ID" ColumnName="QVariable_ID" />
+          <ScalarProperty Name="PFVariable_ID" ColumnName="PFVariable_ID" />
+          <ScalarProperty Name="EnableVariable_ID" ColumnName="EnableVariable_ID" />
+          <ScalarProperty Name="LoadVariable_ID" ColumnName="LoadVariable_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

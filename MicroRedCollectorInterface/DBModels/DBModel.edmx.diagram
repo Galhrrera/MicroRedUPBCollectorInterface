@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="81028b53f20d496ab9288171900b5736" Name="Diagram1">
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.Area" Width="1.5" PointX="0.75" PointY="25.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.Device" Width="1.5" PointX="3" PointY="23.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.DevicesType" Width="1.5" PointX="0.75" PointY="22.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.EnphaseDevice" Width="1.5" PointX="5.25" PointY="3.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.EnphaseVariable" Width="1.5" PointX="5.25" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.FroniusDataManagerDevice" Width="1.5" PointX="5.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.FroniusDataManagerVariable" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.FroniusDevice" Width="1.5" PointX="5.25" PointY="14.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.FroniusVariable" Width="1.5" PointX="5.25" PointY="17.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.ModbusDevice" Width="1.5" PointX="5.25" PointY="20.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.ModbusVariable" Width="1.5" PointX="5.25" PointY="23.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.SmartMeterDevice" Width="1.5" PointX="5.25" PointY="27.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.SmartMeterVariable" Width="1.5" PointX="5.25" PointY="30.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.SolarLogDevice" Width="1.5" PointX="5.25" PointY="33.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.SolarLogVariable" Width="1.5" PointX="5.25" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.UbidotsDevice" Width="1.5" PointX="5.25" PointY="39.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.UbidotsVariable" Width="1.5" PointX="5.25" PointY="42.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="CollectorInterfaceDBModel.VoltageControllerDevice" Width="1.5" PointX="5.25" PointY="45.25" IsExpanded="true" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__Devices__Area__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__Devices__DeviceT__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__EnphaseDe__Devic__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__EnphaseVa__Devic__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__FroniusDa__Devic__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__FroniusDa__Devic__3B75D760" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__FroniusDe__Devic__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__FroniusVa__Devic__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__ModbusDev__Devic__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__ModbusVar__Devic__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__SmartMete__Devic__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__SmartMete__Devic__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__SolarLogD__Devic__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__SolarLogV__Devic__46E78A0C" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__UbidotsDe__Devic__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__UbidotsVa__Devic__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="CollectorInterfaceDBModel.FK__VoltageCo__Devic__5535A963" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

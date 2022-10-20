@@ -1,0 +1,524 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CollectorInterfaceDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Areas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeviceName" Type="nvarchar" MaxLength="255" />
+    <Property Name="PowerVariable" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="Devices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="IP" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Controllable" Type="bit" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="255" />
+    <Property Name="DeviceType" Type="smallint" Nullable="false" />
+    <Property Name="Area" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DevicesTypes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceType" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="PostTime" Type="float" />
+  </EntityType>
+  <EntityType Name="EnphaseDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Capacity" Type="float" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="MicroInverters" Type="smallint" />
+    <Property Name="NumberOfPanels" Type="smallint" />
+  </EntityType>
+  <EntityType Name="EnphaseVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="MicroInverterNumber" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FroniusDataManagerDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FroniusDataManagerVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="VectorPosition" Type="int" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="FroniusDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="InverterNumber" Type="smallint" Nullable="false" />
+    <Property Name="Capacity" Type="float" Nullable="false" />
+    <Property Name="NumberOfPanels" Type="smallint" />
+  </EntityType>
+  <EntityType Name="FroniusVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="JsonName" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="ModbusDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="UnitID" Type="smallint" Nullable="false" />
+    <Property Name="ScaleClass" Type="smallint" Nullable="false" />
+    <Property Name="Port" Type="smallint" Nullable="false" />
+    <Property Name="OrderClass" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ModbusVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="StartRegister" Type="nvarchar" MaxLength="255" />
+    <Property Name="Bytes" Type="nvarchar" MaxLength="255" />
+    <Property Name="Scale" Type="nvarchar" MaxLength="255" />
+    <Property Name="Offset" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+    <Property Name="RegisterType" Type="smallint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SmartMeterDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Port" Type="smallint" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="HighVoltage" Type="float" Nullable="false" />
+    <Property Name="LowVoltage" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SmartMeterVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Registry" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="SolarLogDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Capacity" Type="float" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="255" />
+    <Property Name="Password" Type="nvarchar" MaxLength="255" />
+    <Property Name="NumberOfPanels" Type="smallint" />
+    <Property Name="HighVoltage" Type="float" Nullable="false" />
+    <Property Name="LowVoltage" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SolarLogVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Label" Type="nvarchar" MaxLength="255" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="UbidotsDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Token" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UbidotsVariables">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DeviceID" Type="smallint" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="Unit" Type="nvarchar" MaxLength="255" />
+    <Property Name="ID_Ubidots" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="VoltageControllerDevices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="smallint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Device_ID" Type="smallint" Nullable="false" />
+    <Property Name="Gvq" Type="float" Nullable="false" />
+    <Property Name="Gvg" Type="float" Nullable="false" />
+    <Property Name="Gvp" Type="float" Nullable="false" />
+    <Property Name="PFmin" Type="float" Nullable="false" />
+    <Property Name="Vnom" Type="float" Nullable="false" />
+    <Property Name="VoltageReference" Type="float" Nullable="false" />
+    <Property Name="Vmax" Type="float" Nullable="false" />
+    <Property Name="Vmin" Type="float" Nullable="false" />
+    <Property Name="VoltageVariable_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="QVariable_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="PFVariable_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="EnableVariable_ID" Type="nvarchar" MaxLength="255" />
+    <Property Name="LoadVariable_ID" Type="smallint" Nullable="false" />
+  </EntityType>
+  <Association Name="FK__Devices__Area__3D5E1FD2">
+    <End Role="Areas" Type="Self.Areas" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Devices" Type="Self.Devices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Areas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Devices">
+        <PropertyRef Name="Area" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Devices__DeviceT__3C69FB99">
+    <End Role="DevicesTypes" Type="Self.DevicesTypes" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Devices" Type="Self.Devices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DevicesTypes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Devices">
+        <PropertyRef Name="DeviceType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EnphaseDe__Devic__5165187F">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnphaseDevices" Type="Self.EnphaseDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EnphaseDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__EnphaseVa__Devic__5441852A">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="EnphaseVariables" Type="Self.EnphaseVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="EnphaseVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FroniusDa__Devic__4BAC3F29">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FroniusDataManagerDevices" Type="Self.FroniusDataManagerDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FroniusDataManagerDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FroniusDa__Devic__4E88ABD4">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FroniusDataManagerVariables" Type="Self.FroniusDataManagerVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FroniusDataManagerVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FroniusDe__Devic__45F365D3">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FroniusDevices" Type="Self.FroniusDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FroniusDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__FroniusVa__Devic__48CFD27E">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FroniusVariables" Type="Self.FroniusVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="FroniusVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ModbusDev__Devic__628FA481">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModbusDevices" Type="Self.ModbusDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ModbusDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ModbusVar__Devic__656C112C">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="ModbusVariables" Type="Self.ModbusVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ModbusVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SmartMete__Devic__403A8C7D">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SmartMeterDevices" Type="Self.SmartMeterDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SmartMeterDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SmartMete__Devic__4316F928">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SmartMeterVariables" Type="Self.SmartMeterVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SmartMeterVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SolarLogD__Devic__571DF1D5">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SolarLogDevices" Type="Self.SolarLogDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SolarLogDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SolarLogV__Devic__59FA5E80">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="SolarLogVariables" Type="Self.SolarLogVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SolarLogVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UbidotsDe__Devic__5CD6CB2B">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UbidotsDevices" Type="Self.UbidotsDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UbidotsDevices">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UbidotsVa__Devic__5FB337D6">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UbidotsVariables" Type="Self.UbidotsVariables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="UbidotsVariables">
+        <PropertyRef Name="DeviceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__VoltageCo__Devic__68487DD7">
+    <End Role="Devices" Type="Self.Devices" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="VoltageControllerDevices" Type="Self.VoltageControllerDevices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Devices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="VoltageControllerDevices">
+        <PropertyRef Name="Device_ID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="CollectorInterfaceDBModelStoreContainer">
+    <EntitySet Name="Areas" EntityType="Self.Areas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Devices" EntityType="Self.Devices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DevicesTypes" EntityType="Self.DevicesTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnphaseDevices" EntityType="Self.EnphaseDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="EnphaseVariables" EntityType="Self.EnphaseVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FroniusDataManagerDevices" EntityType="Self.FroniusDataManagerDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FroniusDataManagerVariables" EntityType="Self.FroniusDataManagerVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FroniusDevices" EntityType="Self.FroniusDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FroniusVariables" EntityType="Self.FroniusVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModbusDevices" EntityType="Self.ModbusDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ModbusVariables" EntityType="Self.ModbusVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SmartMeterDevices" EntityType="Self.SmartMeterDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SmartMeterVariables" EntityType="Self.SmartMeterVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SolarLogDevices" EntityType="Self.SolarLogDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SolarLogVariables" EntityType="Self.SolarLogVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UbidotsDevices" EntityType="Self.UbidotsDevices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UbidotsVariables" EntityType="Self.UbidotsVariables" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="VoltageControllerDevices" EntityType="Self.VoltageControllerDevices" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Devices__Area__3D5E1FD2" Association="Self.FK__Devices__Area__3D5E1FD2">
+      <End Role="Areas" EntitySet="Areas" />
+      <End Role="Devices" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Devices__DeviceT__3C69FB99" Association="Self.FK__Devices__DeviceT__3C69FB99">
+      <End Role="DevicesTypes" EntitySet="DevicesTypes" />
+      <End Role="Devices" EntitySet="Devices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EnphaseDe__Devic__5165187F" Association="Self.FK__EnphaseDe__Devic__5165187F">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="EnphaseDevices" EntitySet="EnphaseDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__EnphaseVa__Devic__5441852A" Association="Self.FK__EnphaseVa__Devic__5441852A">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="EnphaseVariables" EntitySet="EnphaseVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FroniusDa__Devic__4BAC3F29" Association="Self.FK__FroniusDa__Devic__4BAC3F29">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="FroniusDataManagerDevices" EntitySet="FroniusDataManagerDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FroniusDa__Devic__4E88ABD4" Association="Self.FK__FroniusDa__Devic__4E88ABD4">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="FroniusDataManagerVariables" EntitySet="FroniusDataManagerVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FroniusDe__Devic__45F365D3" Association="Self.FK__FroniusDe__Devic__45F365D3">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="FroniusDevices" EntitySet="FroniusDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__FroniusVa__Devic__48CFD27E" Association="Self.FK__FroniusVa__Devic__48CFD27E">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="FroniusVariables" EntitySet="FroniusVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ModbusDev__Devic__628FA481" Association="Self.FK__ModbusDev__Devic__628FA481">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="ModbusDevices" EntitySet="ModbusDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ModbusVar__Devic__656C112C" Association="Self.FK__ModbusVar__Devic__656C112C">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="ModbusVariables" EntitySet="ModbusVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SmartMete__Devic__403A8C7D" Association="Self.FK__SmartMete__Devic__403A8C7D">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="SmartMeterDevices" EntitySet="SmartMeterDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SmartMete__Devic__4316F928" Association="Self.FK__SmartMete__Devic__4316F928">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="SmartMeterVariables" EntitySet="SmartMeterVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SolarLogD__Devic__571DF1D5" Association="Self.FK__SolarLogD__Devic__571DF1D5">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="SolarLogDevices" EntitySet="SolarLogDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SolarLogV__Devic__59FA5E80" Association="Self.FK__SolarLogV__Devic__59FA5E80">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="SolarLogVariables" EntitySet="SolarLogVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UbidotsDe__Devic__5CD6CB2B" Association="Self.FK__UbidotsDe__Devic__5CD6CB2B">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="UbidotsDevices" EntitySet="UbidotsDevices" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UbidotsVa__Devic__5FB337D6" Association="Self.FK__UbidotsVa__Devic__5FB337D6">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="UbidotsVariables" EntitySet="UbidotsVariables" />
+    </AssociationSet>
+    <AssociationSet Name="FK__VoltageCo__Devic__68487DD7" Association="Self.FK__VoltageCo__Devic__68487DD7">
+      <End Role="Devices" EntitySet="Devices" />
+      <End Role="VoltageControllerDevices" EntitySet="VoltageControllerDevices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
