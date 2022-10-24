@@ -1,0 +1,56 @@
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.dll.config
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.pdb
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MongoDB.Bson.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Buffers.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.pdb
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.pdb
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MongoDB.Bson.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Buffers.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csprojAssemblyReference.cache
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.CopyComplete
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.dll
+C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.dll.config
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\DataStructure.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MongoDB.Bson.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Buffers.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\BouncyCastle.Crypto.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MailKit.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MimeKit.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\MongoDB.Bson.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Buffers.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.AssemblyReference.cache
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.CoreCompileInputs.cache
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.CopyComplete
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.pdb
