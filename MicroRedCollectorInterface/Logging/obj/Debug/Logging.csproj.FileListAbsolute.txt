@@ -4,3 +4,9 @@ C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Debu
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.dll
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\bin\Debug\Logging.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\bin\Debug\Logging.pdb
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.csproj.AssemblyReference.cache
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.dll
+C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.pdb
