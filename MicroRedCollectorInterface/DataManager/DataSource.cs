@@ -407,7 +407,7 @@ namespace DataManager
             {
                 string entity_id = collection.Replace("MODBUS_", "");
                 FiwareFronius FroniusAttr;
-
+                /*
                 bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
                 bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
                 bool hasvalueEnergyYear = values.TryGetValue("EnergyYear", out double valueEnergyYear);
@@ -428,6 +428,13 @@ namespace DataManager
                 {
                     Console.WriteLine("Alguno de los valores de variables para FiwareFronius están vacíos");
                     throw new Exception("Alguno de los valores de variables para Fronius están vacíos");
+                }*/
+                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
+
+                if (hasvalueEnergyTotal)
+                {
+                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
+                    PatchToOrion(FroniusAttr, entity_id);
                 }
             }
 
