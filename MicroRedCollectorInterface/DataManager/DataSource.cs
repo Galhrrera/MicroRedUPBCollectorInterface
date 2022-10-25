@@ -440,7 +440,9 @@ namespace DataManager
             }
             else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter1_Phase1" || collection == "BESS_BIBL_Inverter3_Phase3")
             {
-                bool hasvalueBatteryChargeActive = values.TryGetValue("BatteryChargeActive", out double vaueBatteryChargeActive);
+                FiwareBessInv BessInvAttr;
+
+                bool hasvalueBatteryChargeActive = values.TryGetValue("BatteryChargeActive", out double valueBatteryChargeActive);
                 bool hasvalueBatteryChargeActiveDay = values.TryGetValue("BatteryChargeActiveDay", out double valueBatteryChargeActiveDay);
                 bool hasvalueBatteryChargeActiveMonth = values.TryGetValue("BatteryChargeActiveMonth", out double valueBatteryChargeActiveMonth);
                 bool hasvalueBatteryCurrent = values.TryGetValue("BatteryCurrent", out double valueBatteryCurrent);
@@ -477,7 +479,7 @@ namespace DataManager
                 bool hasvalueGridInputEnergy = values.TryGetValue("GridInputEnergy", out double valueGridInputEnergy);
                 bool hasvalueGridInputEnergyDay = values.TryGetValue("GridInputEnergyDay", out double valueGridInputEnergyDay);
                 bool hasvalueGridInputEnergyMonth = values.TryGetValue("GridInputEnergyMonth", out double valueGridInputEnergyMonth);
-                bool hasvalueGridOutputActive = values.TryGetValue("GridOutputActive", out double vaueGridOutputActive);
+                bool hasvalueGridOutputActive = values.TryGetValue("GridOutputActive", out double valueGridOutputActive);
                 bool hasvalueGridOutputActiveDay = values.TryGetValue("GridOutputActiveDay", out double valueGridOutputActiveDay);
                 bool hasvalueGridOutputActiveMonth = values.TryGetValue("GridOutputActiveMonth", out double valueGridOutputActiveMonth);
                 bool hasvaueGridOutputCurrent = values.TryGetValue("GridOutputCurrent", out double valueGridOutputCurrent);
@@ -506,6 +508,37 @@ namespace DataManager
                 bool hasvalueLoadOutputEnergyDay = values.TryGetValue("LoadOutputEnergyDay", out double valueLoadOutputEnergyDay);
                 bool hasvalueLoadOutputEnergyMonth = values.TryGetValue("LoadOutputEnergyMonth", out double valueLoadOutputEnergyMonth);
                 bool hasvalueSellEnabled = values.TryGetValue("SellEnabled", out double valueSellEnabled);
+
+                if(hasvalueBatteryChargeActive && hasvalueBatteryChargeActiveDay && hasvalueBatteryChargeActiveMonth && hasvalueBatteryCurrent && hasvalueBatteryDischargeActive
+                    && hasvalueBatteryDischargeActiveDay && hasvalueBatteryDischargeActiveMonth && hasvalueBatteryPower && hasvalueBatteryVoltage && hasvalueChargeDCCurrent
+                    && hasvalueChargeDCPower && hasvalueChargeDCPowerPercentage && hasvalueChargerEnabled && hasvalueChargerStatus && hasvalueDeviceState && hasvalueEnergyFromBattery
+                    && hasvalueEnergyFromBatteryDay && hasvalueEnergyFromBatteryMonth && hasvalueEnergyToBattery && hasvaueEnergyToBatteryDay && hasvalueEnergyToBatteryMonth
+                    && hasvalueForcedSell && hasvalueGridACCurrent && hasvalueGridACFrequency && hasvalueGridACInputCurrent && hasvalueGridACInputPowerApparent && hasvalueGridACInputVoltage
+                    && hasvalueGridACL1Current && hasvalueGridACL1Voltage && hasvalueGridACPower && hasvalueGridACVoltage && hasvalueGridInputActive && hasvalueGridInputActiveDay && hasvalueGridInputActiveMonth
+                    && hasvalueGridInputEnergy && hasvalueGridInputEnergyDay && hasvalueGridInputEnergyMonth && hasvalueGridOutputActive && hasvalueGridOutputActiveDay && hasvalueGridOutputActiveMonth
+                    && hasvaueGridOutputCurrent && hasvalueGridOutputEnergy && hasvalueGridOutputEnergyDay && hasvalueGridOutputEnergyMonth && hasvalueGridOutputFrequency && hasvalueGridOutputPower
+                    && hasvalueGridOutputPowerApparent && hasvalueGridOutputVoltage && hasvalueInverterDCCurrent && hasvalueInverterDCPower && hasvalueInverterEnabled && hasvaluesInverterStatus
+                    && hasvalueLoadACCurrent && hasvalueLoadACFrequency && hasvalueLoadACL1Current && hasvalueLoadACL1Voltage && hasvalueLoadACPower && hasvalueLoadACPowerApparent && hasvalueLoadACVoltage
+                    && hasvalueLoadOutputActive && hasvalueLoadOutputActiveDay && hasvalueLoadOutputActiveMonth && hasvalueLoadOutputEnergy && hasvalueLoadOutputEnergyDay && hasvalueLoadOutputEnergyMonth
+                    && hasvalueSellEnabled)
+                {
+                    BessInvAttr = new FiwareBessInv(valueBatteryChargeActive, valueBatteryChargeActiveDay, valueBatteryChargeActiveMonth, valueBatteryCurrent, valueBatteryDischargeActive,
+                        valueBatteryDischargeActiveDay, valueBatteryDischargeActiveMonth, valueBatteryPower, valueBatteryVoltage, valueChargeDCCurrent, valueChargeDCPower, valueChargeDCPowerPercentage,
+                        valueChargerEnabled, valueChargerStatus, valueDeviceState, valueEnergyFromBattery, valueEnergyFromBatteryDay, valueEnergyFromBatteryMonth, valueEnergyToBattery, valueEnergyToBatteryDay,
+                        valueEnergyToBatteryMonth, valueForcedSell, valueGridACCurrent, valueGridACFrequency, valueGridACInputCurrent, valueGridACInputPowerApparent, valueGridACInputVoltage, valueGridACL1Current,
+                        valueGridACL1Voltage, valueGridACPower, valueGridACVoltage, valueGridInputActive, valueGridInputActiveDay, valueGridInputActiveMonth, valueGridInputEnergy, valueGridInputEnergyDay,
+                        valueGridInputEnergyMonth, valueGridOutputActive, valueGridOutputActiveDay, valueGridOutputActiveMonth, valueGridOutputCurrent, valueGridOutputEnergy, valueGridOutputEnergyDay,
+                        valueGridOutputEnergyMonth, valueGridOutputFrequency, valueGridOutputPower, valueGridOutputPowerApparent, valueGridOutputVoltage, valueInverterDCCurrent, valueInverterDCPower,
+                        valueInverterEnabled, valueInverterStatus, valueLoadACCurrent, valueLoadACFrequency, valueLoadACL1Current, valueLoadACL1Voltage, valueLoadACPower, valueLoadACPowerApparent,
+                        valueLoadACVoltage, valueLoadOutputActive, valueLoadOutputActiveDay, valueLoadOutputActiveMonth, valueLoadOutputEnergy, valueLoadOutputEnergyDay, valueLoadOutputEnergyMonth, valueSellEnabled);
+
+                    PatchToOrion(BessInvAttr, collection);
+                }
+                else
+                {
+                    Console.WriteLine("Alguno de las variables de BESS INV está nula o incorrecta");
+                    throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
+                }
             }
 
         }
