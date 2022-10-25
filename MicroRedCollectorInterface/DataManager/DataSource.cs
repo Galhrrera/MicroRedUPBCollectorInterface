@@ -402,8 +402,10 @@ namespace DataManager
                     throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
                 }
             }
-            else if(collection == "FR1_B11_20")
+            else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
+                collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
+                string entity_id = collection.Replace("MODBUS_", "");
                 FiwareFronius FroniusAttr;
 
                 bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
@@ -420,7 +422,7 @@ namespace DataManager
                     hasvalueIDC && hasvaluePAC && hasvalueVAC && hasvalueVDC)
                 {
                     FroniusAttr = new FiwareFronius(valueEnergyDay, valueEnergyTotal, valueEnergyYear, valueFrequency, valueIAC, valueIDC, valuePAC, valueVAC, valueVDC);
-                    PatchToOrion(FroniusAttr, collection);
+                    PatchToOrion(FroniusAttr, entity_id);
                 }
                 else
                 {
