@@ -15,9 +15,9 @@ namespace DataStructure
 
         public FiwareDM(double radiation, double temperature1, double temperature2)
         {
-            this.Radiation.value = radiation;
-            this.Temperature1.value = temperature1;
-            this.Temperature2.value = temperature2;
+            this.Radiation = new FiwareAtributo(radiation);
+            this.Temperature1 = new FiwareAtributo(temperature1);
+            this.Temperature2 = new FiwareAtributo(temperature2);
         }
     }
 }
