@@ -436,6 +436,76 @@ namespace DataManager
                     FroniusAttr = new FiwareFronius(valueEnergyTotal);
                     PatchToOrion(FroniusAttr, entity_id);
                 }
+                //Colocar else
+            }
+            else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter1_Phase1" || collection == "BESS_BIBL_Inverter3_Phase3")
+            {
+                bool hasvalueBatteryChargeActive = values.TryGetValue("BatteryChargeActive", out double vaueBatteryChargeActive);
+                bool hasvalueBatteryChargeActiveDay = values.TryGetValue("BatteryChargeActiveDay", out double valueBatteryChargeActiveDay);
+                bool hasvalueBatteryChargeActiveMonth = values.TryGetValue("BatteryChargeActiveMonth", out double valueBatteryChargeActiveMonth);
+                bool hasvalueBatteryCurrent = values.TryGetValue("BatteryCurrent", out double valueBatteryCurrent);
+                bool hasvalueBatteryDischargeActive = values.TryGetValue("BatteryDischargeActive", out double valueBatteryDischargeActive);
+                bool hasvalueBatteryDischargeActiveDay = values.TryGetValue("BatteryDischargeActiveDay", out double valueBatteryDischargeActiveDay);
+                bool hasvalueBatteryDischargeActiveMonth = values.TryGetValue("BatteryDischargeActiveMonth", out double valueBatteryDischargeActiveMonth);
+                bool hasvalueBatteryPower = values.TryGetValue("BatteryPower", out double valueBatteryPower);
+                bool hasvalueBatteryVoltage = values.TryGetValue("BatteryVoltage", out double valueBatteryVoltage);
+                bool hasvalueChargeDCCurrent = values.TryGetValue("ChargeDCCurrent", out double valueChargeDCCurrent);
+                bool hasvalueChargeDCPower = values.TryGetValue("ChargeDCPower", out double valueChargeDCPower);
+                bool hasvalueChargeDCPowerPercentage = values.TryGetValue("ChargeDCPowerPercentage", out double valueChargeDCPowerPercentage);
+                bool hasvalueChargerEnabled = values.TryGetValue("ChargerEnabled", out double valueChargerEnabled);
+                bool hasvalueChargerStatus = values.TryGetValue("ChargerStatus", out double valueChargerStatus);
+                bool hasvalueDeviceState = values.TryGetValue("DeviceState", out double valueDeviceState);
+                bool hasvalueEnergyFromBattery = values.TryGetValue("EnergyFromBattery", out double valueEnergyFromBattery);
+                bool hasvalueEnergyFromBatteryDay = values.TryGetValue("EnergyFromBatteryDay", out double valueEnergyFromBatteryDay);
+                bool hasvalueEnergyFromBatteryMonth = values.TryGetValue("EnergyFromBatteryMonth", out double valueEnergyFromBatteryMonth);
+                bool hasvalueEnergyToBattery = values.TryGetValue("EnergyToBattery", out double valueEnergyToBattery);
+                bool hasvaueEnergyToBatteryDay = values.TryGetValue("EnergyToBatteryDay", out double valueEnergyToBatteryDay);
+                bool hasvalueEnergyToBatteryMonth = values.TryGetValue("EnergyToBatteryMonth", out double valueEnergyToBatteryMonth);
+                bool hasvalueForcedSell = values.TryGetValue("ForcedSell", out double valueForcedSell);
+                bool hasvalueGridACCurrent = values.TryGetValue("GridACCurrent", out double valueGridACCurrent);
+                bool hasvalueGridACFrequency = values.TryGetValue("GridACFrequency", out double valueGridACFrequency);
+                bool hasvalueGridACInputCurrent = values.TryGetValue("GridACInputCurrent", out double valueGridACInputCurrent);
+                bool hasvalueGridACInputPowerApparent = values.TryGetValue("GridACInputPowerApparent", out double valueGridACInputPowerApparent);
+                bool hasvalueGridACInputVoltage = values.TryGetValue("GridACInputVoltage", out double valueGridACInputVoltage);
+                bool hasvalueGridACL1Current = values.TryGetValue("GridACL1Current", out double valueGridACL1Current);
+                bool hasvalueGridACL1Voltage = values.TryGetValue("GridACL1Voltage", out double valueGridACL1Voltage);
+                bool hasvalueGridACPower = values.TryGetValue("GridACPower", out double valueGridACPower);
+                bool hasvalueGridACVoltage = values.TryGetValue("GridACVoltage", out double valueGridACVoltage);
+                bool hasvalueGridInputActive = values.TryGetValue("GridInputActive", out double valueGridInputActive);
+                bool hasvalueGridInputActiveDay = values.TryGetValue("GridInputActiveDay", out double valueGridInputActiveDay);
+                bool hasvalueGridInputActiveMonth = values.TryGetValue("GridInputActiveMonth", out double valueGridInputActiveMonth);
+                bool hasvalueGridInputEnergy = values.TryGetValue("GridInputEnergy", out double valueGridInputEnergy);
+                bool hasvalueGridInputEnergyDay = values.TryGetValue("GridInputEnergyDay", out double valueGridInputEnergyDay);
+                bool hasvalueGridInputEnergyMonth = values.TryGetValue("GridInputEnergyMonth", out double valueGridInputEnergyMonth);
+                bool hasvalueGridOutputActive = values.TryGetValue("GridOutputActive", out double vaueGridOutputActive);
+                bool hasvalueGridOutputActiveDay = values.TryGetValue("GridOutputActiveDay", out double valueGridOutputActiveDay);
+                bool hasvalueGridOutputActiveMonth = values.TryGetValue("GridOutputActiveMonth", out double valueGridOutputActiveMonth);
+                bool hasvaueGridOutputCurrent = values.TryGetValue("GridOutputCurrent", out double valueGridOutputCurrent);
+                bool hasvalueGridOutputEnergy = values.TryGetValue("GridOutputEnergy", out double valueGridOutputEnergy);
+                bool hasvalueGridOutputEnergyDay = values.TryGetValue("GridOutputEnergyDay", out double valueGridOutputEnergyDay);
+                bool hasvalueGridOutputEnergyMonth = values.TryGetValue("GridOutputEnergyMonth", out double valueGridOutputEnergyMonth);
+                bool hasvalueGridOutputFrequency = values.TryGetValue("GridOutputFrequency", out double valueGridOutputFrequency);
+                bool hasvalueGridOutputPower = values.TryGetValue("GridOutputPower", out double valueGridOutputPower);
+                bool hasvalueGridOutputPowerApparent = values.TryGetValue("GridOutputPowerApparent", out double valueGridOutputPowerApparent);
+                bool hasvalueGridOutputVoltage = values.TryGetValue("GridOutputVoltage", out double valueGridOutputVoltage);
+                bool hasvalueInverterDCCurrent = values.TryGetValue("InverterDCCurrent", out double valueInverterDCCurrent);
+                bool hasvalueInverterDCPower = values.TryGetValue("InverterDCPower", out double valueInverterDCPower);
+                bool hasvalueInverterEnabled = values.TryGetValue("InverterEnabled", out double valueInverterEnabled);
+                bool hasvaluesInverterStatus = values.TryGetValue("InverterStatus", out double valueInverterStatus);
+                bool hasvalueLoadACCurrent = values.TryGetValue("LoadACCurrent", out double valueLoadACCurrent);
+                bool hasvalueLoadACFrequency = values.TryGetValue("LoadACFrequency", out double valueLoadACFrequency);
+                bool hasvalueLoadACL1Current = values.TryGetValue("LoadACL1Current", out double valueLoadACL1Current);
+                bool hasvalueLoadACL1Voltage = values.TryGetValue("LoadACL1Voltage", out double valueLoadACL1Voltage);
+                bool hasvalueLoadACPower = values.TryGetValue("LoadACPower", out double valueLoadACPower);
+                bool hasvalueLoadACPowerApparent = values.TryGetValue("LoadACPowerApparent", out double valueLoadACPowerApparent);
+                bool hasvalueLoadACVoltage = values.TryGetValue("LoadACVoltage", out double valueLoadACVoltage);
+                bool hasvalueLoadOutputActive = values.TryGetValue("LoadOutputActive", out double valueLoadOutputActive);
+                bool hasvalueLoadOutputActiveDay = values.TryGetValue("LoadOutputActiveDay", out double valueLoadOutputActiveDay);
+                bool hasvalueLoadOutputActiveMonth = values.TryGetValue("LoadOutputActiveMonth", out double valueLoadOutputActiveMonth);
+                bool hasvalueLoadOutputEnergy = values.TryGetValue("LoadOutputEnergy", out double valueLoadOutputEnergy);
+                bool hasvalueLoadOutputEnergyDay = values.TryGetValue("LoadOutputEnergyDay", out double valueLoadOutputEnergyDay);
+                bool hasvalueLoadOutputEnergyMonth = values.TryGetValue("LoadOutputEnergyMonth", out double valueLoadOutputEnergyMonth);
+                bool hasvalueSellEnabled = values.TryGetValue("SellEnabled", out double valueSellEnabled);
             }
 
         }
