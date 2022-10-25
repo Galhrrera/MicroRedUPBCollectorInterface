@@ -192,6 +192,7 @@ namespace DataManager
                     DataSource.InsertDocumentInfluxDBLocal(unit.Name, values, epochTime);
                     DataSource.InsertDocumentInfluxDB(unit.Name, values, epochTime);
                     DataSource.InsertTopicKafka(unit.Name, values, epochTime);
+                    DataSource.PreparePatchToOrion(unit.Name, values);
 
                     modbusClient.Disconnect();
                 }

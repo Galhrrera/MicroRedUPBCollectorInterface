@@ -131,6 +131,7 @@ namespace DataManager
                     }
                     DataSource.InsertDocumentInfluxDBLocal(smartMeter.Name, values, epochTime);
                     DataSource.InsertTopicKafka(smartMeter.Name, values, epochTime);
+                    DataSource.PreparePatchToOrion(smartMeter.Name, values);
 
                     settings.reader.Close();
                 }

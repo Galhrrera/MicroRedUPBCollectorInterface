@@ -193,6 +193,7 @@ namespace DataManager
                         }
                         DataSource.InsertDocumentInfluxDBLocal(inverter.EnphaseDevice.Name, values, epochTime);
                         DataSource.InsertTopicKafka(inverter.EnphaseDevice.Name, values, epochTime);
+                        DataSource.PreparePatchToOrion(inverter.EnphaseDevice.Name, values);
                     }
                 }
             }

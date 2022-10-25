@@ -97,6 +97,7 @@ namespace DataManager
                 }
                 DataSource.InsertDocumentInfluxDBLocal(ubidots.Name, values, DataSource.ConvertDateTimeToUnixEpoch(DateTime.Now));
                 DataSource.InsertTopicKafka(ubidots.Name, values, DataSource.ConvertDateTimeToUnixEpoch(DateTime.Now));
+                
             }
             catch (Exception)
             {

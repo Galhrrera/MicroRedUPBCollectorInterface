@@ -130,6 +130,7 @@ namespace DataManager
                 }
                 DataSource.InsertDocumentInfluxDBLocal(inverter.Name, values, epochTime);
                 DataSource.InsertTopicKafka(inverter.Name, values, epochTime);
+                DataSource.PreparePatchToOrion(inverter.Name, values);
             }
             catch (Exception)
             {

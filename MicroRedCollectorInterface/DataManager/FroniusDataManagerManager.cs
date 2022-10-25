@@ -89,6 +89,7 @@ namespace DataManager
                 }
                 DataSource.InsertDocumentInfluxDBLocal(dataManager.Name, values, epochTime);
                 DataSource.InsertTopicKafka(dataManager.Name, values, epochTime);
+                DataSource.PreparePatchToOrion(dataManager.Name, values);
             }
             catch (Exception)
             {
