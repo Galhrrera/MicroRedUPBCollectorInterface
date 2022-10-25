@@ -436,7 +436,10 @@ namespace DataManager
                     FroniusAttr = new FiwareFronius(valueEnergyTotal);
                     PatchToOrion(FroniusAttr, entity_id);
                 }
-                //Colocar else
+                else
+                {
+                    Console.WriteLine("Valor de la variable para Fronius no está completo o es null");
+                }
             }
             else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter1_Phase1" || collection == "BESS_BIBL_Inverter3_Phase3")
             {
