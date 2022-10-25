@@ -16,5 +16,10 @@ namespace DataStructure
             this.type = "Number";
             this.value = value;
         }
+
+        public FiwareAtributo()
+        {
+            this.value = 0;
+        }
     }
 }

@@ -32,5 +32,18 @@ namespace DataStructure
             this.VAC.value = vAC;
             this.VDC.value = vDC;
         }
+
+        public FiwareFronius(double energyTotal)
+        {
+            this.EnergyTotal = new FiwareAtributo(energyTotal);
+            this.EnergyDay = new FiwareAtributo();
+            this.EnergyYear = new FiwareAtributo();
+            this.Frequency = new FiwareAtributo();
+            this.IAC = new FiwareAtributo();
+            this.IDC = new FiwareAtributo();
+            this.PAC = new FiwareAtributo();
+            this.VAC = new FiwareAtributo();
+            this.VDC = new FiwareAtributo();
+        }
     }
 }
