@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace DataStructure
 {
-    internal class FiwareFronius
+    public class FiwareFronius : FiwareDevice
     {
+        //Variables para dispositivo Fronius
+        public FiwareAtributo EnergyDay;
+        public FiwareAtributo EnergyTotal;
+        public FiwareAtributo EnergyYear;
+        public FiwareAtributo Frequency;
+        public FiwareAtributo IAC;
+        public FiwareAtributo IDC;
+        public FiwareAtributo PAC;
+        public FiwareAtributo VAC;
+        public FiwareAtributo VDC;
+
+        public FiwareFronius(double energyDay, double energyTotal, double energyYear, double frequency, double iAC, double iDC, double pAC, 
+            double vAC, double vDC)
+        {
+            this.EnergyDay.value = energyDay;
+            this.EnergyTotal.value = energyTotal;
+            this.EnergyYear.value = energyYear;
+            this.Frequency.value = frequency;
+            this.IAC.value = iAC;
+            this.IDC.value = iDC;
+            this.PAC.value = pAC;
+            this.VAC.value = vAC;
+            this.VDC.value = vDC;
+        }
     }
 }

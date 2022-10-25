@@ -79,6 +79,10 @@
   <ItemGroup>
     <Compile Include="Device.cs" />
     <Compile Include="DeviceType.cs" />
+    <Compile Include="FiwareAtributo.cs" />
+    <Compile Include="FiwareDevice.cs" />
+    <Compile Include="FiwareDM.cs" />
+    <Compile Include="FiwareFronius.cs" />
     <Compile Include="KafkaStructure.cs" />
     <Compile Include="Mail.cs" />
     <Compile Include="FroniusDataManagerDevice.cs" />

@@ -387,7 +387,6 @@ namespace DataManager
             {
                 FiwareDM DMAttr;
 
-
                 bool hasvalueRad = values.TryGetValue("Radiation",out double valueRad);
                 bool hasvalueTemp1 = values.TryGetValue("Temperature1", out double valueTemp1);
                 bool hasvalueTemp2 = values.TryGetValue("Temperature2", out double valueTemp2);
@@ -395,18 +394,45 @@ namespace DataManager
                 if (hasvalueRad && hasvalueTemp1 && hasvalueTemp2)
                 {
                     DMAttr = new FiwareDM(valueRad, valueTemp1, valueTemp2);
-                    PathcToOrion(DMAttr, collection);
+                    PatchToOrion(DMAttr, collection);
                 }
                 else
                 {
+                    Console.WriteLine("Alguno de los valores de variables para FiwareDM están vacíos");
                     throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
+                }
+            }
+            else if(collection == "FR1_B11_20")
+            {
+                FiwareFronius FroniusAttr;
+
+                bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
+                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
+                bool hasvalueEnergyYear = values.TryGetValue("EnergyYear", out double valueEnergyYear);
+                bool hasvalueFrequency = values.TryGetValue("Frequency", out double valueFrequency);
+                bool hasvalueIAC = values.TryGetValue("IAC", out double valueIAC);
+                bool hasvalueIDC = values.TryGetValue("IDC", out double valueIDC);
+                bool hasvaluePAC = values.TryGetValue("PAC", out double valuePAC);
+                bool hasvalueVAC = values.TryGetValue("VAC", out double valueVAC);
+                bool hasvalueVDC = values.TryGetValue("VDC", out double valueVDC);
+
+                if (hasvalueEnergyDay && hasvalueEnergyTotal && hasvalueEnergyYear && hasvalueFrequency && hasvalueIAC && 
+                    hasvalueIDC && hasvaluePAC && hasvalueVAC && hasvalueVDC)
+                {
+                    FroniusAttr = new FiwareFronius(valueEnergyDay, valueEnergyTotal, valueEnergyYear, valueFrequency, valueIAC, valueIDC, valuePAC, valueVAC, valueVDC);
+                    PatchToOrion(FroniusAttr, collection);
+                }
+                else
+                {
+                    Console.WriteLine("Alguno de los valores de variables para FiwareFronius están vacíos");
+                    throw new Exception("Alguno de los valores de variables para Fronius están vacíos");
                 }
             }
 
         }
 
         //Realizar PATCH en Orion
-        public static async void PathcToOrion(FiwareDevice ObjetToSend, string id)
+        public static async void PatchToOrion(FiwareDevice ObjetToSend, string id)
         {
             HttpClient cliente = new HttpClient()
             {

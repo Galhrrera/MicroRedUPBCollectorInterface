@@ -8,6 +8,7 @@ namespace DataStructure
 {
     public class FiwareDM: FiwareDevice
     {
+        //Atributos para dispositivo DM
         public FiwareAtributo Radiation;
         public FiwareAtributo Temperature1;
         public FiwareAtributo Temperature2;
