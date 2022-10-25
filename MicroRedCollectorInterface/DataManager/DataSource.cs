@@ -13,6 +13,9 @@ using InfluxDB.Client.Writes;
 using Newtonsoft.Json;
 using MoreLinq;
 using System.Linq;
+using System.Net.Http;
+using System.Text;
+using Gurux.DLMS.Enums;
 
 namespace DataManager
 {
@@ -35,6 +38,8 @@ namespace DataManager
         public static readonly string SmartGridCollectionFormat = "{0}_{1}";
 
         public static readonly string SmartGrid = ConfigurationManager.AppSettings["MicroGrid"];
+
+        //private static List<string> entity_ids = new List<string>() { "DM_B11_ING" };
 
         static DataSource()
         {
@@ -374,6 +379,61 @@ namespace DataManager
             }
         }
 
+        //Preparar datos para Orion
+        public static void PreparePatchToOrion(string collection, Dictionary<string, double> values){
+            //Colocar la lógica
+            
+            if (collection == "DM_B11_ING")
+            {
+                FiwareDM DMAttr;
+
+
+                bool hasvalueRad = values.TryGetValue("Radiation",out double valueRad);
+                bool hasvalueTemp1 = values.TryGetValue("Temperature1", out double valueTemp1);
+                bool hasvalueTemp2 = values.TryGetValue("Temperature2", out double valueTemp2);
+
+                if (hasvalueRad && hasvalueTemp1 && hasvalueTemp2)
+                {
+                    DMAttr = new FiwareDM(valueRad, valueTemp1, valueTemp2);
+                    PathcToOrion(DMAttr, collection);
+                }
+                else
+                {
+                    throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
+                }
+            }
+
+        }
+
+        //Realizar PATCH en Orion
+        public static async void PathcToOrion(FiwareDevice ObjetToSend, string id)
+        {
+            HttpClient cliente = new HttpClient()
+            {
+                BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
+            };
+
+            var json = JsonConvert.SerializeObject(ObjetToSend);
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
+
+            try
+            {
+                HttpResponseMessage respuesta = await cliente.PostAsync(
+                "v2/entities/" + id + "/attrs", content);
+
+                respuesta.EnsureSuccessStatusCode();
+
+                var jsonResponse = await respuesta.Content.ReadAsStringAsync();
+            }
+            catch (Exception e)
+            {
+                throw new Exception("Error al actualizar la entidad: " + id+" con error: "+ e.Message);
+            }
+        }
+
+
+
         public static void InsertTopicKafka(string collection, Dictionary<string, double> values, long epochTime)
         {
             if (KafkaProducer != null)
@@ -403,8 +463,6 @@ namespace DataManager
                 KafkaProducer.ProduceAsync(topic, new Message<Null, string> { Value = JsonConvert.SerializeObject(kafkaStructure) });
             }
         }
-
-        //Insertar tópico en Orion
 
         public static DateTime ConvertUnixEpochToDateTime(double ms)
         {

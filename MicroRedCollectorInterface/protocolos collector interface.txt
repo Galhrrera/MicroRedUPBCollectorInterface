@@ -1,0 +1,4 @@
+String collection: id_entity
+dictionary: valores
+	clave: variable
+	valor: valor
