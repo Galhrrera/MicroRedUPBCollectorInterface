@@ -437,6 +437,7 @@ namespace DataManager
                         valueWMaxLimPct_RvrtTms, valueWMaxLimPct_WinTms);
 
                     PatchToOrion(ModbusAttr, collection);
+                    Console.WriteLine("ENVÍA DATOS DE MODBUS **************************");
                 }
                 else
                 {
