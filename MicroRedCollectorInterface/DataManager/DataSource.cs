@@ -402,10 +402,50 @@ namespace DataManager
                     throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
                 }
             }
+
             else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
-                string entity_id = collection.Replace("MODBUS_", "");
+
+                FiwareModbus ModbusAttr;
+
+                bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
+                bool hasEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
+                bool hasOutPFSet = values.TryGetValue("OutPFSet", out double valueOutPFSet);
+                bool hasOutPFSet_Ena = values.TryGetValue("OutPFSet_Ena", out double valueOutPFSet_Ena);
+                bool hasOutPFSet_RmpTms = values.TryGetValue("OutPFSet_RmpTms", out double valueOutPFSet_RmpTms);
+                bool hasOutPFSet_RvrtTms = values.TryGetValue("OutPFSet_RvrtTms", out double valueOutPFSet_RvrtTms);
+                bool hasOutPFSet_WinTms = values.TryGetValue("OutPFSet_WinTms", out double valueOutPFSet_WinTms);
+                bool hasPAC = values.TryGetValue("PAC", out double valuePAC);
+                bool hasReactivePower = values.TryGetValue("ReactivePower", out double valueReactivePower);
+                bool hasTotalPowerFactor = values.TryGetValue("TotalPowerFactor", out double valueTotalPowerFactor);
+                bool hasV1 = values.TryGetValue("V1", out double valueV1);
+                bool hasV2 = values.TryGetValue("V2", out double valueV2);
+                bool hasV3 = values.TryGetValue("V3", out double valueV3);
+                bool hasvWMaxLim_Ena = values.TryGetValue("WMaxLim_Ena", out double valueWMaxLim_Ena);
+                bool hasWMaxLimPct = values.TryGetValue("WMaxLimPct", out double valueWMaxLimPct);
+                bool hasWMaxLimPct_RmpTms = values.TryGetValue("WMaxLimPct_RmpTms", out double valueWMaxLimPct_RmpTms);
+                bool hasWMaxLimPct_RvrtTms = values.TryGetValue("WMaxLimPct_RvrtTms", out double valueWMaxLimPct_RvrtTms);
+                bool hsaWMaxLimPct_WinTms = values.TryGetValue("WMaxLimPct_WinTms", out double valueWMaxLimPct_WinTms);
+
+                if (hasApparentPower && hasEnergyTotal && hasOutPFSet && hasOutPFSet_Ena && hasOutPFSet_RmpTms && hasOutPFSet_RvrtTms && hasOutPFSet_WinTms &&
+                    hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
+                    hasWMaxLimPct_RvrtTms && hsaWMaxLimPct_WinTms)
+                {
+                    ModbusAttr = new FiwareModbus(valueApparentPower, valueEnergyTotal, valueOutPFSet, valueOutPFSet_Ena, valueOutPFSet_RmpTms, valueOutPFSet_RvrtTms,
+                        valueOutPFSet_WinTms, valuePAC, valueReactivePower, valueTotalPowerFactor, valueV1, valueV2, valueV3, valueWMaxLim_Ena, valueWMaxLimPct, valueWMaxLimPct_RmpTms,
+                        valueWMaxLimPct_RvrtTms, valueWMaxLimPct_WinTms);
+
+                    PatchToOrion(ModbusAttr, collection);
+                }
+                else
+                {
+                    Console.WriteLine("Alguno de las variables de MODBUS está nula o incorrecta");
+                    throw new Exception("Alguno de los valores para las variables de MODBUS no es correcto o es null");
+                }
+
+
+                string entity_id = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
                 FiwareFronius FroniusAttr;
                 /*
                 bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
@@ -429,19 +469,21 @@ namespace DataManager
                     Console.WriteLine("Alguno de los valores de variables para FiwareFronius están vacíos");
                     throw new Exception("Alguno de los valores de variables para Fronius están vacíos");
                 }*/
-                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
+                bool hasvalueEnergyTotalFR = values.TryGetValue("EnergyTotal", out double valueEnergyTotalFR);
 
-                if (hasvalueEnergyTotal)
+                if (hasvalueEnergyTotalFR)
                 {
-                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
+                    FroniusAttr = new FiwareFronius(valueEnergyTotalFR);
                     PatchToOrion(FroniusAttr, entity_id);
                 }
                 else
                 {
                     Console.WriteLine("Valor de la variable para Fronius no está completo o es null");
                 }
+
+
             }
-            else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter1_Phase1" || collection == "BESS_BIBL_Inverter3_Phase3")
+            else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter2_Phase2" || collection == "BESS_BIBL_Inverter3_Phase3")
             {
                 FiwareBessInv BessInvAttr;
 
