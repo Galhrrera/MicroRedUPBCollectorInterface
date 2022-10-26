@@ -408,6 +408,9 @@ namespace DataManager
             {
 
                 FiwareModbus ModbusAttr;
+                FiwareFronius FroniusAttr;
+                string entity_id_modbus = collection;
+                string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
 
                 bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
                 bool hasEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
@@ -441,8 +444,11 @@ namespace DataManager
                         valueOutPFSet_WinTms, valuePAC, valueReactivePower, valueTotalPowerFactor, valueV1, valueV2, valueV3, valueWMaxLim_Ena, valueWMaxLimPct, valueWMaxLimPct_RmpTms,
                         valueWMaxLimPct_RvrtTms, valueWMaxLimPct_WinTms);
 
-                    PatchToOrion(ModbusAttr, collection);
-                    Console.WriteLine("ENVÍA DATOS DE MODBUS **************************");
+                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
+
+                    PatchToOrion(ModbusAttr, entity_id_modbus);
+                    PatchToOrion(FroniusAttr, entity_id_fronius);
+                    Console.WriteLine("ENVÍA DATOS DE MODBUS & FRONIUS **************************");
                 }
                 else
                 {
@@ -451,8 +457,8 @@ namespace DataManager
                 }
 
 
-                string entity_id = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
-                FiwareFronius FroniusAttr;
+
+
                 /*
                 bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
                 bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
@@ -474,7 +480,7 @@ namespace DataManager
                 {
                     Console.WriteLine("Alguno de los valores de variables para FiwareFronius están vacíos");
                     throw new Exception("Alguno de los valores de variables para Fronius están vacíos");
-                }*/
+                }
                 bool hasvalueEnergyTotalFR = values.TryGetValue("EnergyTotal", out double valueEnergyTotalFR);
 
                 if (hasvalueEnergyTotalFR)
@@ -486,6 +492,7 @@ namespace DataManager
                 {
                     Console.WriteLine("Valor de la variable para Fronius no está completo o es null");
                 }
+                */
 
 
             }
