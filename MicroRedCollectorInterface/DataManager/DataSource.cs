@@ -332,6 +332,17 @@ namespace DataManager
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
 
+            //Validar los valores, y la entidad
+            Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
+            Console.WriteLine("El string collection es: " + collection);
+
+            foreach (var dic in values)
+            {
+                Console.WriteLine("la clave del diccionario es: {0}, y el valor es {1}", dic.Key, dic.Value);
+            }
+
+            //FIN DE LA VALIDACIÓN
+
             using (var writeApi = InfluxDBLocalClient.GetWriteApi())
             {
                 var points = new List<PointData>();
@@ -352,17 +363,6 @@ namespace DataManager
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
-
-            //Validar los valores, y la entidad
-            Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
-            Console.WriteLine("El string collection es: "+ collection);
-
-            foreach(var dic in values)
-            {
-                Console.WriteLine("la clave del diccionario es: {0}, y el valor es {1}",dic.Key, dic.Value);
-            }
-
-            //FIN DE LA VALIDACIÓN
 
             using (var writeApi = InfluxDBClient.GetWriteApi())
             {
