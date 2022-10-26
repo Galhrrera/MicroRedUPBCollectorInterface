@@ -406,9 +406,7 @@ namespace DataManager
             else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
-                Console.WriteLine("*********************");
-                Console.WriteLine("SI entra al condicional de MODBUS con: " + collection);
-                Console.WriteLine("*********************");
+
                 FiwareModbus ModbusAttr;
 
                 bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
@@ -434,6 +432,11 @@ namespace DataManager
                     hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
                     hasWMaxLimPct_RvrtTms && hsaWMaxLimPct_WinTms)
                 {
+
+                    Console.WriteLine("*********************");
+                    Console.WriteLine("SI entra al condicional de PREPARACIÓN MODBUS con: " + collection);
+                    Console.WriteLine("*********************");
+
                     ModbusAttr = new FiwareModbus(valueApparentPower, valueEnergyTotal, valueOutPFSet, valueOutPFSet_Ena, valueOutPFSet_RmpTms, valueOutPFSet_RvrtTms,
                         valueOutPFSet_WinTms, valuePAC, valueReactivePower, valueTotalPowerFactor, valueV1, valueV2, valueV3, valueWMaxLim_Ena, valueWMaxLimPct, valueWMaxLimPct_RmpTms,
                         valueWMaxLimPct_RvrtTms, valueWMaxLimPct_WinTms);
