@@ -406,7 +406,9 @@ namespace DataManager
             else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
-
+                Console.WriteLine("*********************");
+                Console.WriteLine("SI entra al condicional de MODBUS con: " + collection);
+                Console.WriteLine("*********************");
                 FiwareModbus ModbusAttr;
 
                 bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
@@ -607,7 +609,6 @@ namespace DataManager
                 "v2/entities/" + id + "/attrs", content);
 
                 respuesta.EnsureSuccessStatusCode();
-                Console.WriteLine(respuesta.Content + " Para el entity_id: "+id);
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
             }
             catch (Exception e)
