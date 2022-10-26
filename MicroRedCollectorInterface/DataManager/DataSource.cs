@@ -606,7 +606,7 @@ namespace DataManager
                 "v2/entities/" + id + "/attrs", content);
 
                 respuesta.EnsureSuccessStatusCode();
-
+                Console.WriteLine(respuesta.Content + " Para el entity_id: "+id);
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
             }
             catch (Exception e)
