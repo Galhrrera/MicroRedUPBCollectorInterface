@@ -335,11 +335,12 @@ namespace DataManager
             //Validar los valores, y la entidad
             Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
             Console.WriteLine("El string collection es: " + collection);
-
+            /*
             foreach (var dic in values)
             {
                 Console.WriteLine("la clave del diccionario es: {0}, y el valor es {1}", dic.Key, dic.Value);
             }
+            */
 
             //FIN DE LA VALIDACIÓN
 
@@ -666,11 +667,13 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
+                Console.WriteLine(jsonResponse);
             }
             catch (Exception e)
             {
                 throw new Exception("Error al actualizar la entidad: " + id+" con error: "+ e.Message);
             }
+            Console.WriteLine("la entidad actualizada fue: " + id);
         }
 
 
