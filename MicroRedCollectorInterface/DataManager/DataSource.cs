@@ -613,6 +613,33 @@ namespace DataManager
                     throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
                 }
             }
+            else if(collection == "BESS_BatteryMonitor")
+            {
+                //Lógica para los BESS_BM
+                bool hasvalueBatteryCapacityRemaining = values.TryGetValue("BatteryCapacityRemaining", out double valueBatteryCapacityRemaining);
+                bool hasvalueBatteryCapacityRemoved = values.TryGetValue("BatteryCapacityRemoved", out double valueBatteryCapacityRemoved);
+                bool hasvalueBatteryCapacityReturned = values.TryGetValue("BatteryCapacityReturned", out double valueBatteryCapacityReturned);
+                bool hasvalueBatteryCurrent = values.TryGetValue("BatteryCurrent", out double valueBatteryCurrent);
+                bool hasvalueBatteryNumberOfChargeCycles = values.TryGetValue("BatteryNumberOfChargeCycles", out double valueBatteryNumberOfChargeCycles);
+                bool hasvalueBatteryNumberOfDischarges = values.TryGetValue("BatteryNumberOfDischarges", out double valueBatteryNumberOfDischarges);
+                bool hasvalueBatteryStateOfCharge = values.TryGetValue("BatteryStateOfCharge", out double valueBatteryStateOfCharge);
+                bool hasvalueBatteryTemperature = values.TryGetValue("BatteryTemperature", out double valueBatteryTemperature);
+                bool hasvalueBatteryTimeToDischarge = values.TryGetValue("BatteryTimeToDischarge", out double valueBatteryTimeToDischarge);
+                bool hasvalueBatteryTimeToFull = values.TryGetValue("BatteryTimeToFull", out double valueBatteryTimeToFull);
+                bool hasvalueBatteryVoltage = values.TryGetValue("BatteryVoltage", out double valueBatteryVoltage);
+                bool hasvalueDeviceState = values.TryGetValue("DeviceState", out double valueDeviceState);
+
+                if(hasvalueBatteryCapacityRemaining && hasvalueBatteryCapacityRemoved && hasvalueBatteryCapacityReturned && hasvalueBatteryCurrent &&
+                    hasvalueBatteryNumberOfChargeCycles && hasvalueBatteryNumberOfDischarges && hasvalueBatteryStateOfCharge && hasvalueBatteryTemperature &&
+                    hasvalueBatteryTimeToDischarge && hasvalueBatteryTimeToFull && hasvalueBatteryVoltage && hasvalueDeviceState)
+                {
+                    FiwareBessBM BessBMAttr = new FiwareBessBM(valueBatteryCapacityRemaining, valueBatteryCapacityRemoved, valueBatteryCapacityReturned,
+                        valueBatteryCurrent, valueBatteryNumberOfChargeCycles, valueBatteryNumberOfDischarges, valueBatteryStateOfCharge, valueBatteryTemperature,
+                        valueBatteryTimeToDischarge, valueBatteryTimeToFull, valueBatteryVoltage, valueDeviceState);
+
+                    PatchToOrion(BessBMAttr, collection);
+                }
+            }
 
         }
 
