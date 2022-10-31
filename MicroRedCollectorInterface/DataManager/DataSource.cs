@@ -387,6 +387,7 @@ namespace DataManager
 
             if (collection == "DM_B11_ING")
             {
+                /*
                 FiwareDM DMAttr;
 
                 bool hasvalueRad = values.TryGetValue("Radiation", out double valueRad);
@@ -403,13 +404,16 @@ namespace DataManager
                     Console.WriteLine("Alguno de los valores de variables para FiwareDM están vacíos");
                     throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
                 }
+                */
+                FiwareDM DmAttr = new FiwareDM(values);
+                PatchToOrion(DmAttr.Atributos, collection);
             }
 
             else if (collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
                 string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
-                FiwareFronius FroniusAttr;
+                //FiwareFronius FroniusAttr;
 
 
                 //FiwareModbus ModbusAttr;
@@ -435,6 +439,7 @@ namespace DataManager
                 bool hasWMaxLimPct_RvrtTms = values.TryGetValue("WMaxLimPct_RvrtTms", out double valueWMaxLimPct_RvrtTms);
                 bool hsaWMaxLimPct_WinTms = values.TryGetValue("WMaxLimPct_WinTms", out double valueWMaxLimPct_WinTms);
                 */
+                /*
                 bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
 
                 if (hasvalueEnergyTotal)
@@ -446,7 +451,7 @@ namespace DataManager
                 {
                     throw new Exception("Alguno de los valores de Fronius no está completo");
                 }
-
+                */
                 /*
                 if (hasApparentPower && hasEnergyTotal && hasOutPFSet && hasOutPFSet_Ena && hasOutPFSet_RmpTms && hasOutPFSet_RvrtTms && hasOutPFSet_WinTms &&
                     hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
@@ -513,6 +518,7 @@ namespace DataManager
 
 
             }
+            /*
             else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter2_Phase2" || collection == "BESS_BIBL_Inverter3_Phase3")
             {
                 FiwareBessInv BessInvAttr;
@@ -615,6 +621,7 @@ namespace DataManager
                     throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
                 }
             }
+            */
             /*
             else if (collection == "BESS_BIBL_BatteryMonitor")
             {
@@ -649,14 +656,17 @@ namespace DataManager
         }
 
         //Realizar PATCH en Orion
-        public static async void PatchToOrion(FiwareDevice ObjetToSend, string id)
+        //public static async void PatchToOrion(FiwareDevice ObjectToSend, string id)
+        public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
         {
             HttpClient cliente = new HttpClient()
             {
                 BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
             };
 
-            var json = JsonConvert.SerializeObject(ObjetToSend);
+            var json = JsonConvert.SerializeObject(ObjectToSend);
+
+            Console.WriteLine(json);    //Imprimir para validar el formato del JSON
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
