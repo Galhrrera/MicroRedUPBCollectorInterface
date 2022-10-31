@@ -667,7 +667,7 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-                Console.WriteLine(jsonResponse);
+                Console.WriteLine(respuesta);
             }
             catch (Exception e)
             {
