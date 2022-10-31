@@ -381,14 +381,15 @@ namespace DataManager
         }
 
         //Preparar datos para Orion
-        public static void PreparePatchToOrion(string collection, Dictionary<string, double> values){
+        public static void PreparePatchToOrion(string collection, Dictionary<string, double> values)
+        {
             //Colocar la lógica
-            
+
             if (collection == "DM_B11_ING")
             {
                 FiwareDM DMAttr;
 
-                bool hasvalueRad = values.TryGetValue("Radiation",out double valueRad);
+                bool hasvalueRad = values.TryGetValue("Radiation", out double valueRad);
                 bool hasvalueTemp1 = values.TryGetValue("Temperature1", out double valueTemp1);
                 bool hasvalueTemp2 = values.TryGetValue("Temperature2", out double valueTemp2);
 
@@ -404,7 +405,7 @@ namespace DataManager
                 }
             }
 
-            else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
+            else if (collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
                 string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
@@ -445,7 +446,7 @@ namespace DataManager
                 {
                     throw new Exception("Alguno de los valores de Fronius no está completo");
                 }
-                
+
                 /*
                 if (hasApparentPower && hasEnergyTotal && hasOutPFSet && hasOutPFSet_Ena && hasOutPFSet_RmpTms && hasOutPFSet_RvrtTms && hasOutPFSet_WinTms &&
                     hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
@@ -583,7 +584,7 @@ namespace DataManager
                 bool hasvalueLoadOutputEnergyMonth = values.TryGetValue("LoadOutputEnergyMonth", out double valueLoadOutputEnergyMonth);
                 bool hasvalueSellEnabled = values.TryGetValue("SellEnabled", out double valueSellEnabled);
 
-                if(hasvalueBatteryChargeActive && hasvalueBatteryChargeActiveDay && hasvalueBatteryChargeActiveMonth && hasvalueBatteryCurrent && hasvalueBatteryDischargeActive
+                if (hasvalueBatteryChargeActive && hasvalueBatteryChargeActiveDay && hasvalueBatteryChargeActiveMonth && hasvalueBatteryCurrent && hasvalueBatteryDischargeActive
                     && hasvalueBatteryDischargeActiveDay && hasvalueBatteryDischargeActiveMonth && hasvalueBatteryPower && hasvalueBatteryVoltage && hasvalueChargeDCCurrent
                     && hasvalueChargeDCPower && hasvalueChargeDCPowerPercentage && hasvalueChargerEnabled && hasvalueChargerStatus && hasvalueDeviceState && hasvalueEnergyFromBattery
                     && hasvalueEnergyFromBatteryDay && hasvalueEnergyFromBatteryMonth && hasvalueEnergyToBattery && hasvaueEnergyToBatteryDay && hasvalueEnergyToBatteryMonth
@@ -614,9 +615,8 @@ namespace DataManager
                     throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
                 }
             }
-            
-            
-            else if(collection == "BESS_BIBL_BatteryMonitor")
+            /*
+            else if (collection == "BESS_BIBL_BatteryMonitor")
             {
                 //string entity_id_bess_bm = "BESS_BatteryMonitor";
                 //Lógica para los BESS_BM
@@ -633,7 +633,7 @@ namespace DataManager
                 bool hasvalueBatteryVoltage = values.TryGetValue("BatteryVoltage", out double valueBatteryVoltage);
                 bool hasvalueDeviceState = values.TryGetValue("DeviceState", out double valueDeviceState);
 
-                if(hasvalueBatteryCapacityRemaining && hasvalueBatteryCapacityRemoved && hasvalueBatteryCapacityReturned && hasvalueBatteryCurrent &&
+                if (hasvalueBatteryCapacityRemaining && hasvalueBatteryCapacityRemoved && hasvalueBatteryCapacityReturned && hasvalueBatteryCurrent &&
                     hasvalueBatteryNumberOfChargeCycles && hasvalueBatteryNumberOfDischarges && hasvalueBatteryStateOfCharge && hasvalueBatteryTemperature &&
                     hasvalueBatteryTimeToDischarge && hasvalueBatteryTimeToFull && hasvalueBatteryVoltage && hasvalueDeviceState)
                 {
@@ -644,7 +644,7 @@ namespace DataManager
                     PatchToOrion(BessBMAttr, collection);
                 }
             }
-            
+            */
 
         }
 
@@ -671,9 +671,8 @@ namespace DataManager
             }
             catch (Exception e)
             {
-                throw new Exception("Error al actualizar la entidad: " + id+" con error: "+ e.Message);
+                throw new Exception("Error al actualizar la entidad: " + id + " con error: " + e.Message);
             }
-            Console.WriteLine("la entidad actualizada fue: " + id);
         }
 
 
