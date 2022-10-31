@@ -613,6 +613,7 @@ namespace DataManager
                     throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
                 }
             }
+            /*
             else if(collection == "BESS_BIBL_BatteryMonitor")
             {
                 //string entity_id_bess_bm = "BESS_BatteryMonitor";
@@ -641,6 +642,7 @@ namespace DataManager
                     PatchToOrion(BessBMAttr, collection);
                 }
             }
+            */
 
         }
 
