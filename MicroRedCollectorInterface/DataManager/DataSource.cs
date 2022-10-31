@@ -406,12 +406,14 @@ namespace DataManager
             else if(collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
                 collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
             {
-
-                FiwareModbus ModbusAttr;
-                FiwareFronius FroniusAttr;
-                string entity_id_modbus = collection;
                 string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
+                FiwareFronius FroniusAttr;
 
+
+                //FiwareModbus ModbusAttr;
+                string entity_id_modbus = collection;
+
+                /*
                 bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
                 bool hasEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
                 bool hasOutPFSet = values.TryGetValue("OutPFSet", out double valueOutPFSet);
@@ -430,7 +432,20 @@ namespace DataManager
                 bool hasWMaxLimPct_RmpTms = values.TryGetValue("WMaxLimPct_RmpTms", out double valueWMaxLimPct_RmpTms);
                 bool hasWMaxLimPct_RvrtTms = values.TryGetValue("WMaxLimPct_RvrtTms", out double valueWMaxLimPct_RvrtTms);
                 bool hsaWMaxLimPct_WinTms = values.TryGetValue("WMaxLimPct_WinTms", out double valueWMaxLimPct_WinTms);
+                */
+                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
 
+                if (hasvalueEnergyTotal)
+                {
+                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
+                    PatchToOrion(FroniusAttr, entity_id_fronius);
+                }
+                else
+                {
+                    throw new Exception("Alguno de los valores de Fronius no está completo");
+                }
+                
+                /*
                 if (hasApparentPower && hasEnergyTotal && hasOutPFSet && hasOutPFSet_Ena && hasOutPFSet_RmpTms && hasOutPFSet_RvrtTms && hasOutPFSet_WinTms &&
                     hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
                     hasWMaxLimPct_RvrtTms && hsaWMaxLimPct_WinTms)
