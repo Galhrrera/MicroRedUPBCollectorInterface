@@ -84,6 +84,7 @@
     <Compile Include="FiwareBessInv.cs" />
     <Compile Include="FiwareDevice.cs" />
     <Compile Include="FiwareDM.cs" />
+    <Compile Include="FiwareEntity.cs" />
     <Compile Include="FiwareFronius.cs" />
     <Compile Include="FiwareModbus.cs" />
     <Compile Include="KafkaStructure.cs" />
