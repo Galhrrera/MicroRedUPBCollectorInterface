@@ -383,10 +383,12 @@ namespace DataManager
         //Preparar datos para Orion
         public static void PreparePatchToOrion(string collection, Dictionary<string, double> values)
         {
+            FiwareEntity entity = new FiwareEntity(values);
+            PatchToOrion(entity, collection);
             //Colocar la lógica
-
-            if (collection == "DM_B11_ING")
-            {
+            
+            //if (collection == "DM_B11_ING")
+            //{
                 /*
                 FiwareDM DMAttr;
 
@@ -405,19 +407,19 @@ namespace DataManager
                     throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
                 }
                 */
-                FiwareDM DmAttr = new FiwareDM(values);
-                PatchToOrion(DmAttr.Atributos, collection);
-            }
+             //   FiwareDM DmAttr = new FiwareDM(values);
+            //    PatchToOrion(DmAttr.Atributos, collection);
+            //}
 
-            else if (collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
-                collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
-            {
-                string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
+            //else if (collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
+            //    collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
+            //{
+             //   string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
                 //FiwareFronius FroniusAttr;
 
 
                 //FiwareModbus ModbusAttr;
-                string entity_id_modbus = collection;
+               // string entity_id_modbus = collection;
 
                 /*
                 bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
@@ -517,7 +519,7 @@ namespace DataManager
                 */
 
 
-            }
+            //}
             /*
             else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter2_Phase2" || collection == "BESS_BIBL_Inverter3_Phase3")
             {
@@ -657,14 +659,17 @@ namespace DataManager
 
         //Realizar PATCH en Orion
         //public static async void PatchToOrion(FiwareDevice ObjectToSend, string id)
-        public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
+        //public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
+        public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
+            Console.WriteLine("entity_id: " + id);
+
             HttpClient cliente = new HttpClient()
             {
                 BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
             };
 
-            var json = JsonConvert.SerializeObject(ObjectToSend);
+            var json = JsonConvert.SerializeObject(ObjectToSend.Atributos);
 
             Console.WriteLine(json);    //Imprimir para validar el formato del JSON
 
