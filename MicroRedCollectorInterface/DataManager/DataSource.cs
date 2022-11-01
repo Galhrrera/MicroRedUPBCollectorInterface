@@ -333,8 +333,8 @@ namespace DataManager
             utcDateTime = utcDateTime.AddHours(10);
 
             //Validar los valores, y la entidad
-            Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
-            Console.WriteLine("El string collection es: " + collection);
+            //Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
+            //Console.WriteLine("El string collection es: " + collection);
             /*
             foreach (var dic in values)
             {
@@ -385,275 +385,6 @@ namespace DataManager
         {
             FiwareEntity entity = new FiwareEntity(values);
             PatchToOrion(entity, collection);
-            //Colocar la lógica
-            
-            //if (collection == "DM_B11_ING")
-            //{
-                /*
-                FiwareDM DMAttr;
-
-                bool hasvalueRad = values.TryGetValue("Radiation", out double valueRad);
-                bool hasvalueTemp1 = values.TryGetValue("Temperature1", out double valueTemp1);
-                bool hasvalueTemp2 = values.TryGetValue("Temperature2", out double valueTemp2);
-
-                if (hasvalueRad && hasvalueTemp1 && hasvalueTemp2)
-                {
-                    DMAttr = new FiwareDM(valueRad, valueTemp1, valueTemp2);
-                    PatchToOrion(DMAttr, collection);
-                }
-                else
-                {
-                    Console.WriteLine("Alguno de los valores de variables para FiwareDM están vacíos");
-                    throw new Exception("Alguno de los valores de variables para FiwareDM están vacíos");
-                }
-                */
-             //   FiwareDM DmAttr = new FiwareDM(values);
-            //    PatchToOrion(DmAttr.Atributos, collection);
-            //}
-
-            //else if (collection == "MODBUS_FR1_B11_20" || collection == "MODBUS_FR1_B18_10" || collection == "MODBUS_FR1_B18_12.5" || collection == "MODBUS_FR2_B11_20" ||
-            //    collection == "MODBUS_FR2_B18_10" || collection == "MODBUS_FR2_B18_12.5")
-            //{
-             //   string entity_id_fronius = collection.Replace("MODBUS_", ""); //Dispositivos FR / solo reciben, hasta ahora, energía total
-                //FiwareFronius FroniusAttr;
-
-
-                //FiwareModbus ModbusAttr;
-               // string entity_id_modbus = collection;
-
-                /*
-                bool hasApparentPower = values.TryGetValue("ApparentPower", out double valueApparentPower);
-                bool hasEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
-                bool hasOutPFSet = values.TryGetValue("OutPFSet", out double valueOutPFSet);
-                bool hasOutPFSet_Ena = values.TryGetValue("OutPFSet_Ena", out double valueOutPFSet_Ena);
-                bool hasOutPFSet_RmpTms = values.TryGetValue("OutPFSet_RmpTms", out double valueOutPFSet_RmpTms);
-                bool hasOutPFSet_RvrtTms = values.TryGetValue("OutPFSet_RvrtTms", out double valueOutPFSet_RvrtTms);
-                bool hasOutPFSet_WinTms = values.TryGetValue("OutPFSet_WinTms", out double valueOutPFSet_WinTms);
-                bool hasPAC = values.TryGetValue("PAC", out double valuePAC);
-                bool hasReactivePower = values.TryGetValue("ReactivePower", out double valueReactivePower);
-                bool hasTotalPowerFactor = values.TryGetValue("TotalPowerFactor", out double valueTotalPowerFactor);
-                bool hasV1 = values.TryGetValue("V1", out double valueV1);
-                bool hasV2 = values.TryGetValue("V2", out double valueV2);
-                bool hasV3 = values.TryGetValue("V3", out double valueV3);
-                bool hasvWMaxLim_Ena = values.TryGetValue("WMaxLim_Ena", out double valueWMaxLim_Ena);
-                bool hasWMaxLimPct = values.TryGetValue("WMaxLimPct", out double valueWMaxLimPct);
-                bool hasWMaxLimPct_RmpTms = values.TryGetValue("WMaxLimPct_RmpTms", out double valueWMaxLimPct_RmpTms);
-                bool hasWMaxLimPct_RvrtTms = values.TryGetValue("WMaxLimPct_RvrtTms", out double valueWMaxLimPct_RvrtTms);
-                bool hsaWMaxLimPct_WinTms = values.TryGetValue("WMaxLimPct_WinTms", out double valueWMaxLimPct_WinTms);
-                */
-                /*
-                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
-
-                if (hasvalueEnergyTotal)
-                {
-                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
-                    PatchToOrion(FroniusAttr, entity_id_fronius);
-                }
-                else
-                {
-                    throw new Exception("Alguno de los valores de Fronius no está completo");
-                }
-                */
-                /*
-                if (hasApparentPower && hasEnergyTotal && hasOutPFSet && hasOutPFSet_Ena && hasOutPFSet_RmpTms && hasOutPFSet_RvrtTms && hasOutPFSet_WinTms &&
-                    hasPAC && hasReactivePower && hasTotalPowerFactor && hasV1 && hasV2 && hasV3 && hasvWMaxLim_Ena && hasWMaxLimPct && hasWMaxLimPct_RmpTms &&
-                    hasWMaxLimPct_RvrtTms && hsaWMaxLimPct_WinTms)
-                {
-
-                    Console.WriteLine("*********************");
-                    Console.WriteLine("SI entra al condicional de PREPARACIÓN MODBUS con: " + collection);
-                    Console.WriteLine("*********************");
-
-                    ModbusAttr = new FiwareModbus(valueApparentPower, valueEnergyTotal, valueOutPFSet, valueOutPFSet_Ena, valueOutPFSet_RmpTms, valueOutPFSet_RvrtTms,
-                        valueOutPFSet_WinTms, valuePAC, valueReactivePower, valueTotalPowerFactor, valueV1, valueV2, valueV3, valueWMaxLim_Ena, valueWMaxLimPct, valueWMaxLimPct_RmpTms,
-                        valueWMaxLimPct_RvrtTms, valueWMaxLimPct_WinTms);
-
-                    FroniusAttr = new FiwareFronius(valueEnergyTotal);
-
-                    PatchToOrion(ModbusAttr, entity_id_modbus);
-                    PatchToOrion(FroniusAttr, entity_id_fronius);
-                    Console.WriteLine("ENVÍA DATOS DE MODBUS & FRONIUS **************************");
-                }
-                else
-                {
-                    Console.WriteLine("Alguno de las variables de MODBUS está nula o incorrecta");
-                    throw new Exception("Alguno de los valores para las variables de MODBUS no es correcto o es null");
-                }
-
-
-
-
-                /*
-                bool hasvalueEnergyDay = values.TryGetValue("EnergyDay", out double valueEnergyDay);
-                bool hasvalueEnergyTotal = values.TryGetValue("EnergyTotal", out double valueEnergyTotal);
-                bool hasvalueEnergyYear = values.TryGetValue("EnergyYear", out double valueEnergyYear);
-                bool hasvalueFrequency = values.TryGetValue("Frequency", out double valueFrequency);
-                bool hasvalueIAC = values.TryGetValue("IAC", out double valueIAC);
-                bool hasvalueIDC = values.TryGetValue("IDC", out double valueIDC);
-                bool hasvaluePAC = values.TryGetValue("PAC", out double valuePAC);
-                bool hasvalueVAC = values.TryGetValue("VAC", out double valueVAC);
-                bool hasvalueVDC = values.TryGetValue("VDC", out double valueVDC);
-
-                if (hasvalueEnergyDay && hasvalueEnergyTotal && hasvalueEnergyYear && hasvalueFrequency && hasvalueIAC && 
-                    hasvalueIDC && hasvaluePAC && hasvalueVAC && hasvalueVDC)
-                {
-                    FroniusAttr = new FiwareFronius(valueEnergyDay, valueEnergyTotal, valueEnergyYear, valueFrequency, valueIAC, valueIDC, valuePAC, valueVAC, valueVDC);
-                    PatchToOrion(FroniusAttr, entity_id);
-                }
-                else
-                {
-                    Console.WriteLine("Alguno de los valores de variables para FiwareFronius están vacíos");
-                    throw new Exception("Alguno de los valores de variables para Fronius están vacíos");
-                }
-                bool hasvalueEnergyTotalFR = values.TryGetValue("EnergyTotal", out double valueEnergyTotalFR);
-
-                if (hasvalueEnergyTotalFR)
-                {
-                    FroniusAttr = new FiwareFronius(valueEnergyTotalFR);
-                    PatchToOrion(FroniusAttr, entity_id);
-                }
-                else
-                {
-                    Console.WriteLine("Valor de la variable para Fronius no está completo o es null");
-                }
-                */
-
-
-            //}
-            /*
-            else if (collection == "BESS_BIBL_Inverter1_Phase1" || collection == " BESS_BIBL_Inverter2_Phase2" || collection == "BESS_BIBL_Inverter3_Phase3")
-            {
-                FiwareBessInv BessInvAttr;
-
-                bool hasvalueBatteryChargeActive = values.TryGetValue("BatteryChargeActive", out double valueBatteryChargeActive);
-                bool hasvalueBatteryChargeActiveDay = values.TryGetValue("BatteryChargeActiveDay", out double valueBatteryChargeActiveDay);
-                bool hasvalueBatteryChargeActiveMonth = values.TryGetValue("BatteryChargeActiveMonth", out double valueBatteryChargeActiveMonth);
-                bool hasvalueBatteryCurrent = values.TryGetValue("BatteryCurrent", out double valueBatteryCurrent);
-                bool hasvalueBatteryDischargeActive = values.TryGetValue("BatteryDischargeActive", out double valueBatteryDischargeActive);
-                bool hasvalueBatteryDischargeActiveDay = values.TryGetValue("BatteryDischargeActiveDay", out double valueBatteryDischargeActiveDay);
-                bool hasvalueBatteryDischargeActiveMonth = values.TryGetValue("BatteryDischargeActiveMonth", out double valueBatteryDischargeActiveMonth);
-                bool hasvalueBatteryPower = values.TryGetValue("BatteryPower", out double valueBatteryPower);
-                bool hasvalueBatteryVoltage = values.TryGetValue("BatteryVoltage", out double valueBatteryVoltage);
-                bool hasvalueChargeDCCurrent = values.TryGetValue("ChargeDCCurrent", out double valueChargeDCCurrent);
-                bool hasvalueChargeDCPower = values.TryGetValue("ChargeDCPower", out double valueChargeDCPower);
-                bool hasvalueChargeDCPowerPercentage = values.TryGetValue("ChargeDCPowerPercentage", out double valueChargeDCPowerPercentage);
-                bool hasvalueChargerEnabled = values.TryGetValue("ChargerEnabled", out double valueChargerEnabled);
-                bool hasvalueChargerStatus = values.TryGetValue("ChargerStatus", out double valueChargerStatus);
-                bool hasvalueDeviceState = values.TryGetValue("DeviceState", out double valueDeviceState);
-                bool hasvalueEnergyFromBattery = values.TryGetValue("EnergyFromBattery", out double valueEnergyFromBattery);
-                bool hasvalueEnergyFromBatteryDay = values.TryGetValue("EnergyFromBatteryDay", out double valueEnergyFromBatteryDay);
-                bool hasvalueEnergyFromBatteryMonth = values.TryGetValue("EnergyFromBatteryMonth", out double valueEnergyFromBatteryMonth);
-                bool hasvalueEnergyToBattery = values.TryGetValue("EnergyToBattery", out double valueEnergyToBattery);
-                bool hasvaueEnergyToBatteryDay = values.TryGetValue("EnergyToBatteryDay", out double valueEnergyToBatteryDay);
-                bool hasvalueEnergyToBatteryMonth = values.TryGetValue("EnergyToBatteryMonth", out double valueEnergyToBatteryMonth);
-                bool hasvalueForcedSell = values.TryGetValue("ForcedSell", out double valueForcedSell);
-                bool hasvalueGridACCurrent = values.TryGetValue("GridACCurrent", out double valueGridACCurrent);
-                bool hasvalueGridACFrequency = values.TryGetValue("GridACFrequency", out double valueGridACFrequency);
-                bool hasvalueGridACInputCurrent = values.TryGetValue("GridACInputCurrent", out double valueGridACInputCurrent);
-                bool hasvalueGridACInputPowerApparent = values.TryGetValue("GridACInputPowerApparent", out double valueGridACInputPowerApparent);
-                bool hasvalueGridACInputVoltage = values.TryGetValue("GridACInputVoltage", out double valueGridACInputVoltage);
-                bool hasvalueGridACL1Current = values.TryGetValue("GridACL1Current", out double valueGridACL1Current);
-                bool hasvalueGridACL1Voltage = values.TryGetValue("GridACL1Voltage", out double valueGridACL1Voltage);
-                bool hasvalueGridACPower = values.TryGetValue("GridACPower", out double valueGridACPower);
-                bool hasvalueGridACVoltage = values.TryGetValue("GridACVoltage", out double valueGridACVoltage);
-                bool hasvalueGridInputActive = values.TryGetValue("GridInputActive", out double valueGridInputActive);
-                bool hasvalueGridInputActiveDay = values.TryGetValue("GridInputActiveDay", out double valueGridInputActiveDay);
-                bool hasvalueGridInputActiveMonth = values.TryGetValue("GridInputActiveMonth", out double valueGridInputActiveMonth);
-                bool hasvalueGridInputEnergy = values.TryGetValue("GridInputEnergy", out double valueGridInputEnergy);
-                bool hasvalueGridInputEnergyDay = values.TryGetValue("GridInputEnergyDay", out double valueGridInputEnergyDay);
-                bool hasvalueGridInputEnergyMonth = values.TryGetValue("GridInputEnergyMonth", out double valueGridInputEnergyMonth);
-                bool hasvalueGridOutputActive = values.TryGetValue("GridOutputActive", out double valueGridOutputActive);
-                bool hasvalueGridOutputActiveDay = values.TryGetValue("GridOutputActiveDay", out double valueGridOutputActiveDay);
-                bool hasvalueGridOutputActiveMonth = values.TryGetValue("GridOutputActiveMonth", out double valueGridOutputActiveMonth);
-                bool hasvaueGridOutputCurrent = values.TryGetValue("GridOutputCurrent", out double valueGridOutputCurrent);
-                bool hasvalueGridOutputEnergy = values.TryGetValue("GridOutputEnergy", out double valueGridOutputEnergy);
-                bool hasvalueGridOutputEnergyDay = values.TryGetValue("GridOutputEnergyDay", out double valueGridOutputEnergyDay);
-                bool hasvalueGridOutputEnergyMonth = values.TryGetValue("GridOutputEnergyMonth", out double valueGridOutputEnergyMonth);
-                bool hasvalueGridOutputFrequency = values.TryGetValue("GridOutputFrequency", out double valueGridOutputFrequency);
-                bool hasvalueGridOutputPower = values.TryGetValue("GridOutputPower", out double valueGridOutputPower);
-                bool hasvalueGridOutputPowerApparent = values.TryGetValue("GridOutputPowerApparent", out double valueGridOutputPowerApparent);
-                bool hasvalueGridOutputVoltage = values.TryGetValue("GridOutputVoltage", out double valueGridOutputVoltage);
-                bool hasvalueInverterDCCurrent = values.TryGetValue("InverterDCCurrent", out double valueInverterDCCurrent);
-                bool hasvalueInverterDCPower = values.TryGetValue("InverterDCPower", out double valueInverterDCPower);
-                bool hasvalueInverterEnabled = values.TryGetValue("InverterEnabled", out double valueInverterEnabled);
-                bool hasvaluesInverterStatus = values.TryGetValue("InverterStatus", out double valueInverterStatus);
-                bool hasvalueLoadACCurrent = values.TryGetValue("LoadACCurrent", out double valueLoadACCurrent);
-                bool hasvalueLoadACFrequency = values.TryGetValue("LoadACFrequency", out double valueLoadACFrequency);
-                bool hasvalueLoadACL1Current = values.TryGetValue("LoadACL1Current", out double valueLoadACL1Current);
-                bool hasvalueLoadACL1Voltage = values.TryGetValue("LoadACL1Voltage", out double valueLoadACL1Voltage);
-                bool hasvalueLoadACPower = values.TryGetValue("LoadACPower", out double valueLoadACPower);
-                bool hasvalueLoadACPowerApparent = values.TryGetValue("LoadACPowerApparent", out double valueLoadACPowerApparent);
-                bool hasvalueLoadACVoltage = values.TryGetValue("LoadACVoltage", out double valueLoadACVoltage);
-                bool hasvalueLoadOutputActive = values.TryGetValue("LoadOutputActive", out double valueLoadOutputActive);
-                bool hasvalueLoadOutputActiveDay = values.TryGetValue("LoadOutputActiveDay", out double valueLoadOutputActiveDay);
-                bool hasvalueLoadOutputActiveMonth = values.TryGetValue("LoadOutputActiveMonth", out double valueLoadOutputActiveMonth);
-                bool hasvalueLoadOutputEnergy = values.TryGetValue("LoadOutputEnergy", out double valueLoadOutputEnergy);
-                bool hasvalueLoadOutputEnergyDay = values.TryGetValue("LoadOutputEnergyDay", out double valueLoadOutputEnergyDay);
-                bool hasvalueLoadOutputEnergyMonth = values.TryGetValue("LoadOutputEnergyMonth", out double valueLoadOutputEnergyMonth);
-                bool hasvalueSellEnabled = values.TryGetValue("SellEnabled", out double valueSellEnabled);
-
-                if (hasvalueBatteryChargeActive && hasvalueBatteryChargeActiveDay && hasvalueBatteryChargeActiveMonth && hasvalueBatteryCurrent && hasvalueBatteryDischargeActive
-                    && hasvalueBatteryDischargeActiveDay && hasvalueBatteryDischargeActiveMonth && hasvalueBatteryPower && hasvalueBatteryVoltage && hasvalueChargeDCCurrent
-                    && hasvalueChargeDCPower && hasvalueChargeDCPowerPercentage && hasvalueChargerEnabled && hasvalueChargerStatus && hasvalueDeviceState && hasvalueEnergyFromBattery
-                    && hasvalueEnergyFromBatteryDay && hasvalueEnergyFromBatteryMonth && hasvalueEnergyToBattery && hasvaueEnergyToBatteryDay && hasvalueEnergyToBatteryMonth
-                    && hasvalueForcedSell && hasvalueGridACCurrent && hasvalueGridACFrequency && hasvalueGridACInputCurrent && hasvalueGridACInputPowerApparent && hasvalueGridACInputVoltage
-                    && hasvalueGridACL1Current && hasvalueGridACL1Voltage && hasvalueGridACPower && hasvalueGridACVoltage && hasvalueGridInputActive && hasvalueGridInputActiveDay && hasvalueGridInputActiveMonth
-                    && hasvalueGridInputEnergy && hasvalueGridInputEnergyDay && hasvalueGridInputEnergyMonth && hasvalueGridOutputActive && hasvalueGridOutputActiveDay && hasvalueGridOutputActiveMonth
-                    && hasvaueGridOutputCurrent && hasvalueGridOutputEnergy && hasvalueGridOutputEnergyDay && hasvalueGridOutputEnergyMonth && hasvalueGridOutputFrequency && hasvalueGridOutputPower
-                    && hasvalueGridOutputPowerApparent && hasvalueGridOutputVoltage && hasvalueInverterDCCurrent && hasvalueInverterDCPower && hasvalueInverterEnabled && hasvaluesInverterStatus
-                    && hasvalueLoadACCurrent && hasvalueLoadACFrequency && hasvalueLoadACL1Current && hasvalueLoadACL1Voltage && hasvalueLoadACPower && hasvalueLoadACPowerApparent && hasvalueLoadACVoltage
-                    && hasvalueLoadOutputActive && hasvalueLoadOutputActiveDay && hasvalueLoadOutputActiveMonth && hasvalueLoadOutputEnergy && hasvalueLoadOutputEnergyDay && hasvalueLoadOutputEnergyMonth
-                    && hasvalueSellEnabled)
-                {
-                    BessInvAttr = new FiwareBessInv(valueBatteryChargeActive, valueBatteryChargeActiveDay, valueBatteryChargeActiveMonth, valueBatteryCurrent, valueBatteryDischargeActive,
-                        valueBatteryDischargeActiveDay, valueBatteryDischargeActiveMonth, valueBatteryPower, valueBatteryVoltage, valueChargeDCCurrent, valueChargeDCPower, valueChargeDCPowerPercentage,
-                        valueChargerEnabled, valueChargerStatus, valueDeviceState, valueEnergyFromBattery, valueEnergyFromBatteryDay, valueEnergyFromBatteryMonth, valueEnergyToBattery, valueEnergyToBatteryDay,
-                        valueEnergyToBatteryMonth, valueForcedSell, valueGridACCurrent, valueGridACFrequency, valueGridACInputCurrent, valueGridACInputPowerApparent, valueGridACInputVoltage, valueGridACL1Current,
-                        valueGridACL1Voltage, valueGridACPower, valueGridACVoltage, valueGridInputActive, valueGridInputActiveDay, valueGridInputActiveMonth, valueGridInputEnergy, valueGridInputEnergyDay,
-                        valueGridInputEnergyMonth, valueGridOutputActive, valueGridOutputActiveDay, valueGridOutputActiveMonth, valueGridOutputCurrent, valueGridOutputEnergy, valueGridOutputEnergyDay,
-                        valueGridOutputEnergyMonth, valueGridOutputFrequency, valueGridOutputPower, valueGridOutputPowerApparent, valueGridOutputVoltage, valueInverterDCCurrent, valueInverterDCPower,
-                        valueInverterEnabled, valueInverterStatus, valueLoadACCurrent, valueLoadACFrequency, valueLoadACL1Current, valueLoadACL1Voltage, valueLoadACPower, valueLoadACPowerApparent,
-                        valueLoadACVoltage, valueLoadOutputActive, valueLoadOutputActiveDay, valueLoadOutputActiveMonth, valueLoadOutputEnergy, valueLoadOutputEnergyDay, valueLoadOutputEnergyMonth, valueSellEnabled);
-
-                    PatchToOrion(BessInvAttr, collection);
-                }
-                else
-                {
-                    Console.WriteLine("Alguno de las variables de BESS INV está nula o incorrecta");
-                    throw new Exception("Alguno de los valores para las variables de BESS_INV no es correcto o es null");
-                }
-            }
-            */
-            /*
-            else if (collection == "BESS_BIBL_BatteryMonitor")
-            {
-                //string entity_id_bess_bm = "BESS_BatteryMonitor";
-                //Lógica para los BESS_BM
-                bool hasvalueBatteryCapacityRemaining = values.TryGetValue("BatteryCapacityRemaining", out double valueBatteryCapacityRemaining);
-                bool hasvalueBatteryCapacityRemoved = values.TryGetValue("BatteryCapacityRemoved", out double valueBatteryCapacityRemoved);
-                bool hasvalueBatteryCapacityReturned = values.TryGetValue("BatteryCapacityReturned", out double valueBatteryCapacityReturned);
-                bool hasvalueBatteryCurrent = values.TryGetValue("BatteryCurrent", out double valueBatteryCurrent);
-                bool hasvalueBatteryNumberOfChargeCycles = values.TryGetValue("BatteryNumberOfChargeCycles", out double valueBatteryNumberOfChargeCycles);
-                bool hasvalueBatteryNumberOfDischarges = values.TryGetValue("BatteryNumberOfDischarges", out double valueBatteryNumberOfDischarges);
-                bool hasvalueBatteryStateOfCharge = values.TryGetValue("BatteryStateOfCharge", out double valueBatteryStateOfCharge);
-                bool hasvalueBatteryTemperature = values.TryGetValue("BatteryTemperature", out double valueBatteryTemperature);
-                bool hasvalueBatteryTimeToDischarge = values.TryGetValue("BatteryTimeToDischarge", out double valueBatteryTimeToDischarge);
-                bool hasvalueBatteryTimeToFull = values.TryGetValue("BatteryTimeToFull", out double valueBatteryTimeToFull);
-                bool hasvalueBatteryVoltage = values.TryGetValue("BatteryVoltage", out double valueBatteryVoltage);
-                bool hasvalueDeviceState = values.TryGetValue("DeviceState", out double valueDeviceState);
-
-                if (hasvalueBatteryCapacityRemaining && hasvalueBatteryCapacityRemoved && hasvalueBatteryCapacityReturned && hasvalueBatteryCurrent &&
-                    hasvalueBatteryNumberOfChargeCycles && hasvalueBatteryNumberOfDischarges && hasvalueBatteryStateOfCharge && hasvalueBatteryTemperature &&
-                    hasvalueBatteryTimeToDischarge && hasvalueBatteryTimeToFull && hasvalueBatteryVoltage && hasvalueDeviceState)
-                {
-                    FiwareBessBM BessBMAttr = new FiwareBessBM(valueBatteryCapacityRemaining, valueBatteryCapacityRemoved, valueBatteryCapacityReturned,
-                        valueBatteryCurrent, valueBatteryNumberOfChargeCycles, valueBatteryNumberOfDischarges, valueBatteryStateOfCharge, valueBatteryTemperature,
-                        valueBatteryTimeToDischarge, valueBatteryTimeToFull, valueBatteryVoltage, valueDeviceState);
-
-                    PatchToOrion(BessBMAttr, collection);
-                }
-            }
-            */
 
         }
 
@@ -662,14 +393,15 @@ namespace DataManager
         //public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
         public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
-            Console.WriteLine("entity_id: " + id);
+            //Console.WriteLine("entity_id: " + id);
 
             HttpClient cliente = new HttpClient()
             {
-                BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
+                //BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
+                BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
             };
 
-            var json = JsonConvert.SerializeObject(ObjectToSend.Atributos);
+            var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
             Console.WriteLine(json);    //Imprimir para validar el formato del JSON
 
