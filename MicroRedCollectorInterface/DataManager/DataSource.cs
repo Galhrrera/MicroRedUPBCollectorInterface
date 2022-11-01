@@ -39,6 +39,8 @@ namespace DataManager
 
         public static readonly string SmartGrid = ConfigurationManager.AppSettings["MicroGrid"];
 
+        public static readonly string fiware_ip = ConfigurationManager.AppSettings["fiware_host"];
+
         //private static List<string> entity_ids = new List<string>() { "DM_B11_ING" };
 
         static DataSource()
@@ -395,10 +397,12 @@ namespace DataManager
         {
             //Console.WriteLine("entity_id: " + id);
 
+
             HttpClient cliente = new HttpClient()
             {
                 //BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
-                BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
+                //BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
+                BaseAddress = new Uri(fiware_ip)
             };
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
