@@ -400,9 +400,9 @@ namespace DataManager
 
             HttpClient cliente = new HttpClient()
             {
-                //BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
+                BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
                 //BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
-                BaseAddress = new Uri(fiware_ip)
+                //BaseAddress = new Uri(fiware_ip)
             };
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
