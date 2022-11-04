@@ -383,19 +383,15 @@ namespace DataManager
         //public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
         public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
-            //Console.WriteLine("entity_id: " + id);
 
-            Console.WriteLine(fiware_ip);
             HttpClient cliente = new HttpClient()
             {
-                //BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
-                //BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
                 BaseAddress = new Uri(fiware_ip)
             };
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
-            Console.WriteLine(json);    //Imprimir para validar el formato del JSON
+            //Console.WriteLine(json);    //Imprimir para validar el formato del JSON
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
