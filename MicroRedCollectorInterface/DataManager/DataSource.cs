@@ -334,18 +334,6 @@ namespace DataManager
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
 
-            //Validar los valores, y la entidad
-            //Console.WriteLine("DATOS QUE SE ENVIAN A INFLUXDDB:");
-            //Console.WriteLine("El string collection es: " + collection);
-            /*
-            foreach (var dic in values)
-            {
-                Console.WriteLine("la clave del diccionario es: {0}, y el valor es {1}", dic.Key, dic.Value);
-            }
-            */
-
-            //FIN DE LA VALIDACIÓN
-
             using (var writeApi = InfluxDBLocalClient.GetWriteApi())
             {
                 var points = new List<PointData>();
@@ -397,12 +385,12 @@ namespace DataManager
         {
             //Console.WriteLine("entity_id: " + id);
 
-
+            Console.WriteLine(fiware_ip);
             HttpClient cliente = new HttpClient()
             {
-                BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
+                //BaseAddress = new Uri("http://10.61.3.135:1026") //Colocar en app.config una vez todo esté listo
                 //BaseAddress = new Uri(ConfigurationManager.AppSettings["fiware_host"])
-                //BaseAddress = new Uri(fiware_ip)
+                BaseAddress = new Uri(fiware_ip)
             };
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
