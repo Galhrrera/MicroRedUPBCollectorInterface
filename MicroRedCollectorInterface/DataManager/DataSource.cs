@@ -379,8 +379,6 @@ namespace DataManager
         }
 
         //Realizar PATCH en Orion
-        //public static async void PatchToOrion(FiwareDevice ObjectToSend, string id)
-        //public static async void PatchToOrion(Dictionary<string, FiwareAtributo> ObjectToSend, string id)
         public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
 
@@ -392,6 +390,10 @@ namespace DataManager
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
             //Console.WriteLine(json);    //Imprimir para validar el formato del JSON
+            if(id == "WS_EAFIT_LLANOGRANDE")
+            {
+                Console.WriteLine(json);    //Imprimir para validar el formato del JSON de las ws
+            }
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
