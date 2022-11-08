@@ -373,6 +373,7 @@ namespace DataManager
         //Preparar datos para Orion
         public static void PreparePatchToOrion(string collection, Dictionary<string, double> values)
         {
+            Console.WriteLine("***" + collection + "***");
             FiwareEntity entity = new FiwareEntity(values);
             PatchToOrion(entity, collection);
 
@@ -404,7 +405,7 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-                Console.WriteLine(respuesta);
+                //Console.WriteLine(respuesta);
             }
             catch (Exception e)
             {
