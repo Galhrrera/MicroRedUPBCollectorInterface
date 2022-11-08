@@ -330,6 +330,7 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDBLocal(string collection, Dictionary<string, double> values, long epochTime)
         {
+            Console.WriteLine("desde InsertDocumentInfluxDBLocal: ***" + collection + "***");
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -351,6 +352,7 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDB(string collection, Dictionary<string, double> values, long epochTime)
         {
+            Console.WriteLine("desde InsertDocumentInfluxDB: ***" + collection + "***");
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -373,7 +375,7 @@ namespace DataManager
         //Preparar datos para Orion
         public static void PreparePatchToOrion(string collection, Dictionary<string, double> values)
         {
-            Console.WriteLine("***" + collection + "***");
+            
             FiwareEntity entity = new FiwareEntity(values);
             PatchToOrion(entity, collection);
 
