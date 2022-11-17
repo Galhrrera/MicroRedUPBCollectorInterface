@@ -8,7 +8,7 @@ namespace MicroRedCollectorInterface
 
         static void Main()
         {
-            //FileManager.SaveMonthlyFile(new DateTime(2022, 7, 1, 8, 0, 0));
+            //FileManager.SaveMonthlyFile(new DateTime(2022, 11, 1, 8, 0, 0));
 
             StartCollector();
 

@@ -411,7 +411,7 @@ namespace DataManager
             }
             catch (Exception e)
             {
-                throw new Exception("Error al actualizar la entidad: " + id + " con error: " + e.Message);
+                //throw new Exception("Error al actualizar la entidad: " + id + " con error: " + e.Message);
             }
         }
 

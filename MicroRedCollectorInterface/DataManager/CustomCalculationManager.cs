@@ -133,16 +133,6 @@ namespace DataManager
                 efficiency.Add(tuple, value);
             }
 
-            foreach (var inverter in SolarLogManager.SolarLogDevices)
-            {
-                inverter.Efficiency = radiation == 0 ? 0 :
-                    inverter.Variables["PAC"].LastValue * 100 / (1.63 * radiation * inverter.NumberOfPanels);
-
-                var tuple = new Tuple<string, string>("Calculation", inverter.Name + "Efficiency");
-                var value = inverter.Efficiency;
-                efficiency.Add(tuple, value);
-            }
-
             var efficiencyInfluxDB = new Dictionary<string, double>();
             foreach (var value in efficiency)
             {
@@ -160,9 +150,7 @@ namespace DataManager
                                 select d.Variables["EnergyTotal"].LastValue).Sum();
             var enphaseValue = (from d in EnphaseManager.Inverters
                                 select d.EnphaseDevice.Variables["EnergyTotal"].LastValue).Sum();
-            var solarLogValue = (from d in SolarLogManager.SolarLogDevices
-                                 select d.Variables["EnergyTotal"].LastValue).Sum();
-            double totalValue = froniusValue + enphaseValue + solarLogValue;
+            double totalValue = froniusValue + enphaseValue;
             return totalValue;
         }
 
@@ -174,9 +162,7 @@ namespace DataManager
                 totalValue = (from d in FroniusManager.FroniusDevices
                               select d.Variables["EnergyDay"].LastValue).Sum() +
                              (from d in EnphaseManager.Inverters
-                              select d.EnphaseDevice.Variables["EnergyDay"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              select d.Variables["EnergyDay"].LastValue).Sum();
+                              select d.EnphaseDevice.Variables["EnergyDay"].LastValue).Sum();
             }
             else
             {
@@ -185,10 +171,7 @@ namespace DataManager
                               select d.Variables["EnergyDay"].LastValue).Sum() +
                              (from d in EnphaseManager.Inverters
                               where area == d.EnphaseDevice.Area
-                              select d.EnphaseDevice.Variables["EnergyDay"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where area == d.Area
-                              select d.Variables["EnergyDay"].LastValue).Sum();
+                              select d.EnphaseDevice.Variables["EnergyDay"].LastValue).Sum();
             }
             return totalValue;
         }
@@ -203,10 +186,7 @@ namespace DataManager
                               select d.Variables["PAC"].LastValue).Sum() +
                              (from d in EnphaseManager.Inverters
                               where d.EnphaseDevice.IsValid == true
-                              select d.EnphaseDevice.Variables["PAC"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where d.IsValid == true
-                              select d.Variables["PAC"].LastValue).Sum();
+                              select d.EnphaseDevice.Variables["PAC"].LastValue).Sum();
             }
             else
             {
@@ -215,10 +195,7 @@ namespace DataManager
                               select d.Variables["PAC"].LastValue).Sum() +
                              (from d in EnphaseManager.Inverters
                               where d.EnphaseDevice.IsValid == true && area == d.EnphaseDevice.Area
-                              select d.EnphaseDevice.Variables["PAC"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where d.IsValid == true && area == d.Area
-                              select d.Variables["PAC"].LastValue).Sum();
+                              select d.EnphaseDevice.Variables["PAC"].LastValue).Sum();
             }
             return totalValue;
         }
@@ -229,19 +206,13 @@ namespace DataManager
             if (area == 0)
             {
                 totalValue = (from d in SmartMeterManager.SmartMeters
-                              select d.Variables["ActiveEnergyImportDay"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where d.IsValid == true
-                              select d.Variables["ConsumptionEnergyDay"].LastValue).Sum();
+                              select d.Variables["ActiveEnergyImportDay"].LastValue).Sum();
             }
             else
             {
                 totalValue = (from d in SmartMeterManager.SmartMeters
                               where area == d.Area
-                              select d.Variables["ActiveEnergyImportDay"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where area == d.Area
-                              select d.Variables["ConsumptionEnergyDay"].LastValue).Sum();
+                              select d.Variables["ActiveEnergyImportDay"].LastValue).Sum();
             }
             return totalValue;
         }
@@ -253,19 +224,13 @@ namespace DataManager
             {
                 totalValue = (from d in SmartMeterManager.SmartMeters
                               where d.IsValid == true
-                              select d.Variables["ActivePower"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where d.IsValid == true
-                              select d.Variables["ConsumptionPower"].LastValue).Sum();
+                              select d.Variables["ActivePower"].LastValue).Sum();
             }
             else
             {
                 totalValue = (from d in SmartMeterManager.SmartMeters
                               where d.IsValid == true && area == d.Area
-                              select d.Variables["ActivePower"].LastValue).Sum() +
-                             (from d in SolarLogManager.SolarLogDevices
-                              where d.IsValid == true && area == d.Area
-                              select d.Variables["ConsumptionPower"].LastValue).Sum();
+                              select d.Variables["ActivePower"].LastValue).Sum();
             }
             return totalValue;
         }

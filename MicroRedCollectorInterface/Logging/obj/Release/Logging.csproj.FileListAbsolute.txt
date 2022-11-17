@@ -4,3 +4,8 @@ C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Rele
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Release\Logging.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Release\Logging.dll
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\Logging\obj\Release\Logging.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\bin\Release\Logging.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\bin\Release\Logging.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Release\Logging.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Release\Logging.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Release\Logging.pdb

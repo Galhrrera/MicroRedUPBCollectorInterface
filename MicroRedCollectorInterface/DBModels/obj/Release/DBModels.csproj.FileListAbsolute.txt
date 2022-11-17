@@ -10,3 +10,14 @@ C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DBModels\obj\Rel
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.csproj.CopyComplete
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.dll
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\DBModels.dll.config
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\DBModels.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\DBModels.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\EntityFramework.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\EntityFramework.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Release\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.csproj.CopyComplete
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Release\DBModels.pdb

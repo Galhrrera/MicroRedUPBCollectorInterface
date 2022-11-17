@@ -10,3 +10,8 @@ C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedC
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.dll
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\Logging\obj\Debug\Logging.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\bin\Debug\Logging.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\bin\Debug\Logging.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Debug\Logging.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Debug\Logging.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\Logging\obj\Debug\Logging.pdb

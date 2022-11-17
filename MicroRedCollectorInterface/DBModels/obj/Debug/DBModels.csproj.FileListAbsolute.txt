@@ -22,3 +22,14 @@ C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedC
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csproj.CopyComplete
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.dll
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\DBModels.dll.config
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\DBModels.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\DBModels.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csproj.CopyComplete
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.pdb
