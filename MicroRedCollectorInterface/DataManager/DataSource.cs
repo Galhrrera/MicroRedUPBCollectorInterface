@@ -330,7 +330,7 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDBLocal(string collection, Dictionary<string, double> values, long epochTime)
         {
-            Console.WriteLine("desde InsertDocumentInfluxDBLocal: ***" + collection + "***");
+            //Console.WriteLine("desde InsertDocumentInfluxDBLocal: ***" + collection + "***");
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -352,7 +352,7 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDB(string collection, Dictionary<string, double> values, long epochTime)
         {
-            Console.WriteLine("desde InsertDocumentInfluxDB: ***" + collection + "***");
+            //Console.WriteLine("desde InsertDocumentInfluxDB: ***" + collection + "***");
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -392,10 +392,12 @@ namespace DataManager
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
-            //Console.WriteLine(json);    //Imprimir para validar el formato del JSON
-            if(id == "WS_EAFIT_LLANOGRANDE")
+            //Console.WriteLine(json);    //Imprimir para validar los datos en el formato JSON
+            if(id == "MODBUS_FR1_B18_10" || id == "MODBUS_FR1_B18_12.5" || id == "MODBUS_FR2_B18_12.5" || id == "MODBUS_FR1_B11_20" || id == "MODBUS_FR2_B11_20" ||
+                id == "MODBUS_FR2_B18_10" || id == "Calculation")
             {
-                Console.WriteLine(json);    //Imprimir para validar el formato del JSON de las ws
+                Console.WriteLine("El id es: " + id);
+                Console.WriteLine(json);    //Imprimir para validar el formato del JSON de los modbus
             }
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");

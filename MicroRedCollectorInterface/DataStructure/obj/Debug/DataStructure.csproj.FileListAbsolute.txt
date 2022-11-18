@@ -81,4 +81,3 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataSt
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csproj.CopyComplete
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.pdb
-C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataStructure\obj\Debug\DataStructure.csprojAssemblyReference.cache
