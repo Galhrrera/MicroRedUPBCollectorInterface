@@ -329,8 +329,6 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDBLocal(string collection, Dictionary<string, double> values, long epochTime)
         {
-            //Validar IDs
-            //Console.WriteLine("El id es: " + collection);
 
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
@@ -400,12 +398,6 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-                /*
-                if (id == "Calculation")
-                {
-                    Console.WriteLine(respuesta);
-                }
-                */
 
             }
             catch (Exception e)
