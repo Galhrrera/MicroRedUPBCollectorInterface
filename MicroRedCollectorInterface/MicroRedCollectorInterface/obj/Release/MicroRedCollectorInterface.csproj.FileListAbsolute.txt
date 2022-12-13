@@ -324,6 +324,7 @@ C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\MicroRedCollecto
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\MicroRedCollectorInterface\obj\Release\MicroRedCollectorInterface.csproj.CopyComplete
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\MicroRedCollectorInterface\obj\Release\MicroRedCollectorInterface.exe
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\MicroRedCollectorInterface\obj\Release\MicroRedCollectorInterface.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\ChromeDriver\chromedriver.exe
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\librdkafka\x86\libcrypto-1_1.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\librdkafka\x86\librdkafka.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\librdkafka\x86\librdkafkacpp.dll
@@ -343,7 +344,6 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroR
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\snappy32.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\snappy64.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\libzstd.dll
-C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\ChromeDriver\chromedriver.exe
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\mongocrypt.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\MicroRedCollectorInterface.exe.config
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\MicroRedCollectorInterface\bin\Release\MicroRedCollectorInterface.exe

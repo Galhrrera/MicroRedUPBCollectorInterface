@@ -696,6 +696,7 @@ C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedC
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataManager\obj\Debug\DataManager.dll
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataManager\obj\Debug\DataManager.pdb
 C:\Users\MSI\OneDrive - UPB\Documentos iHub UPB\Tareas\Collector\MR_CI\MicroRedCollectorInterface\DataManager\bin\Debug\System.Security.Permissions.dll
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\EntityFramework.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\librdkafka\x86\libcrypto-1_1.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\librdkafka\x86\librdkafka.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\librdkafka\x86\librdkafkacpp.dll
@@ -823,7 +824,6 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataMa
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\DBModels.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\DnsClient.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\EasyModbus.dll
-C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\EntityFramework.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\Gurux.Common.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Debug\Gurux.Communication.dll

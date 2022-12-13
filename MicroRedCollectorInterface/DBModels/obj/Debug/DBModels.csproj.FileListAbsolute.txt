@@ -29,6 +29,7 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBMode
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csprojAssemblyReference.cache
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.csproj.CopyComplete
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DBModels\obj\Debug\DBModels.dll

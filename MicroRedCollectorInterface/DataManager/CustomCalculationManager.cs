@@ -84,6 +84,7 @@ namespace DataManager
             });
             DataSource.InsertDocumentInfluxDBLocal("Calculation", CalculatedVariables, epochTime);
             DataSource.InsertTopicKafka("Calculation", CalculatedVariables, epochTime);
+            DataSource.PreparePatchToOrion("calculation", CalculatedVariables);
         }
 
         private static double GetRadiation()
@@ -141,6 +142,7 @@ namespace DataManager
             }
             DataSource.InsertDocumentInfluxDBLocal("Calculation", efficiencyInfluxDB, epochTime);
             DataSource.InsertTopicKafka("Calculation", efficiencyInfluxDB, epochTime);
+            DataSource.PreparePatchToOrion("calculation", efficiencyInfluxDB);
 
         }
 

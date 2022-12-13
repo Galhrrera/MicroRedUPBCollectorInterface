@@ -393,8 +393,6 @@ C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataManager\obj\
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataManager\obj\Release\DataManager.csproj.CopyComplete
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataManager\obj\Release\DataManager.dll
 C:\Users\Administrator\Desktop\MR_CI\MicroRedCollectorInterface\DataManager\obj\Release\DataManager.pdb
-C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\MailKit.xml
-C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Security.Permissions.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\librdkafka\x86\libcrypto-1_1.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\librdkafka\x86\librdkafka.dll
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\librdkafka\x86\librdkafkacpp.dll
@@ -585,6 +583,7 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataMa
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\Gurux.Communication.pdb
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\LiteGuard.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\MailKit.pdb
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\MailKit.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\Microsoft.Extensions.Logging.Abstractions.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\Microsoft.Extensions.ObjectPool.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\Microsoft.Extensions.Primitives.xml
@@ -614,6 +613,7 @@ C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataMa
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Reactive.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Security.AccessControl.xml
+C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Security.Permissions.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Security.Principal.Windows.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Text.Encoding.CodePages.xml
 C:\Users\Administrator\Desktop\CollectorFiware\MicroRedCollectorInterface\DataManager\bin\Release\System.Threading.Tasks.Extensions.xml

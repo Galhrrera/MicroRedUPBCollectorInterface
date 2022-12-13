@@ -41,7 +41,6 @@ namespace DataManager
 
         public static readonly string fiware_ip = ConfigurationManager.AppSettings["fiware_host"];
 
-        //private static List<string> entity_ids = new List<string>() { "DM_B11_ING" };
 
         static DataSource()
         {
@@ -330,7 +329,9 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDBLocal(string collection, Dictionary<string, double> values, long epochTime)
         {
-            //Console.WriteLine("desde InsertDocumentInfluxDBLocal: ***" + collection + "***");
+            //Validar IDs
+            //Console.WriteLine("El id es: " + collection);
+
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -352,7 +353,6 @@ namespace DataManager
 
         public static void InsertDocumentInfluxDB(string collection, Dictionary<string, double> values, long epochTime)
         {
-            //Console.WriteLine("desde InsertDocumentInfluxDB: ***" + collection + "***");
             var dateTime = ConvertUnixEpochToDateTime(epochTime);
             var utcDateTime = DateTime.SpecifyKind(dateTime, DateTimeKind.Utc);
             utcDateTime = utcDateTime.AddHours(10);
@@ -375,15 +375,14 @@ namespace DataManager
         //Preparar datos para Orion
         public static void PreparePatchToOrion(string collection, Dictionary<string, double> values)
         {
-            
             FiwareEntity entity = new FiwareEntity(values);
             PatchToOrion(entity, collection);
-
         }
 
         //Realizar PATCH en Orion
         public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
+
 
             HttpClient cliente = new HttpClient()
             {
@@ -391,14 +390,6 @@ namespace DataManager
             };
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
-
-            //Console.WriteLine(json);    //Imprimir para validar los datos en el formato JSON
-            if(id == "MODBUS_FR1_B18_10" || id == "MODBUS_FR1_B18_12.5" || id == "MODBUS_FR2_B18_12.5" || id == "MODBUS_FR1_B11_20" || id == "MODBUS_FR2_B11_20" ||
-                id == "MODBUS_FR2_B18_10" || id == "Calculation")
-            {
-                Console.WriteLine("El id es: " + id);
-                Console.WriteLine(json);    //Imprimir para validar el formato del JSON de los modbus
-            }
 
             var content = new StringContent(json, Encoding.UTF8, "application/json");
 
@@ -409,7 +400,13 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-                //Console.WriteLine(respuesta);
+                /*
+                if (id == "Calculation")
+                {
+                    Console.WriteLine(respuesta);
+                }
+                */
+
             }
             catch (Exception e)
             {

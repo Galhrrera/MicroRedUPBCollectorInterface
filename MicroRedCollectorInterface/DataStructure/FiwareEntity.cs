@@ -22,7 +22,12 @@ namespace DataStructure
                     {
                         FiwareAtributo Attr = new FiwareAtributo(value);
 
-                        this.Atributos.Add(atributo.Key, Attr);
+                        if (atributo.Key == "FR1_B18_12.5Efficiency")
+                            this.Atributos.Add("FR1_B18_12_5Efficiency", Attr);
+                        else if (atributo.Key == "FR2_B18_12.5Efficiency")
+                            this.Atributos.Add("FR2_B18_12_5Efficiency", Attr);
+                        else
+                            this.Atributos.Add(atributo.Key, Attr);
 
                     }
                     catch (Exception e)
