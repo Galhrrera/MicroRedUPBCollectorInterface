@@ -398,7 +398,6 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-
             }
             catch (Exception e)
             {
