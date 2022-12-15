@@ -381,6 +381,10 @@ namespace DataManager
         public static async void PatchToOrion(FiwareEntity ObjectToSend, string id)
         {
 
+            //Console.WriteLine("-- Validar nuevos sensores: ");
+            //Console.WriteLine("-- ID: " + id);
+            //Console.WriteLine("-- Data: ");
+
 
             HttpClient cliente = new HttpClient()
             {
@@ -389,7 +393,26 @@ namespace DataManager
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
-            var content = new StringContent(json, Encoding.UTF8, "application/json");
+            if (id != "BESS_BIBL_BatteryMonitor" && id != "BESS_BIBL_Inverter1_Phase1" && id != "BESS_BIBL_Inverter2_Phase2" && id != "BESS_BIBL_Inverter3_Phase3" && 
+                id != "DM_B11_ING" && id != "FR1_B11_20" && id != "FR1_B18_10" && id != "FR1_B18_12.5" && id != "FR2_B11_20" && id != "FR2_B18_10" && id != "FR2_B18_12.5" && 
+                id != "calculation" && id != "MODBUS_FR1_B11_20" && id != "MODBUS_FR1_B18_10" && id != "MODBUS_FR1_B18_12.5" && id != "MODBUS_FR2_B11_20" && 
+                id != "MODBUS_FR2_B18_10" && id != "MODBUS_FR2_B18_12.5" && id != "ECA01" && id != "ECA02" && id != "EC03" && id != "ECA04" && id != "ECA05" && 
+                id != "ECA06" && id != "WS_CUC" && id != "WS_EAFIT_LLANOGRANDE" && id != "WS_ISA" && id != "WS_UNAL_LAPAZ" && id != "WS_UNIGUAJIRA" && id != "WS_UNISUCRE" && 
+                id != "WS_UPB" && id != "WS_UPB_BUCARAMANGA" && id != "WS_UPB_PALMIRA" && id != "SM_B10_ARQ" && id != "SM_B12_DERE" && id != "SM_B15_BIBL" && id != "SM_B7_POLI" && 
+                id != "SM_B18_PARQ" && id != "SM_B3_RECT" && id != "SM_B4_PRIM" && id != "SM_B5_BACH" && id != "SM_7_CTIC" && id != "SM_B7_TAC" && id != "SM_B8_AA" && 
+                id != "SM_B8_CPA" && id != "SM_B8_LABS" && id != "SM_B9_SFA1" && id != "SM_B9_SFA2" && id != "SM_HABITAT" && id != "SL_B11_28")
+            {
+                if (id.Contains("SOUNDMETER"))
+                {
+                    Console.WriteLine("-- Validar nuevos sensores: \n");
+                    Console.WriteLine("-- ID: " + id);
+                    Console.WriteLine(json);
+                    Console.WriteLine();
+                }
+                
+            }
+
+                var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
@@ -398,6 +421,14 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
+                if (id.Contains("SOUNDMETER"))
+                {
+                    Console.WriteLine(respuesta);
+                    Console.WriteLine();
+                    Console.WriteLine(jsonResponse);
+                }
+                    
+             
             }
             catch (Exception e)
             {
