@@ -37,6 +37,9 @@ namespace DataStructure
 
                 }
             }
+
+            //Eliminar timestamp del diccionario de variables
+            Atributos.Remove("timestamp");
         }
     }
 }

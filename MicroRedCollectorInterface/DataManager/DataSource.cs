@@ -393,6 +393,7 @@ namespace DataManager
 
             var json = JsonConvert.SerializeObject(ObjectToSend.Atributos, formatting: Formatting.Indented);
 
+            /*
             if (id != "BESS_BIBL_BatteryMonitor" && id != "BESS_BIBL_Inverter1_Phase1" && id != "BESS_BIBL_Inverter2_Phase2" && id != "BESS_BIBL_Inverter3_Phase3" && 
                 id != "DM_B11_ING" && id != "FR1_B11_20" && id != "FR1_B18_10" && id != "FR1_B18_12.5" && id != "FR2_B11_20" && id != "FR2_B18_10" && id != "FR2_B18_12.5" && 
                 id != "calculation" && id != "MODBUS_FR1_B11_20" && id != "MODBUS_FR1_B18_10" && id != "MODBUS_FR1_B18_12.5" && id != "MODBUS_FR2_B11_20" && 
@@ -402,17 +403,20 @@ namespace DataManager
                 id != "SM_B18_PARQ" && id != "SM_B3_RECT" && id != "SM_B4_PRIM" && id != "SM_B5_BACH" && id != "SM_7_CTIC" && id != "SM_B7_TAC" && id != "SM_B8_AA" && 
                 id != "SM_B8_CPA" && id != "SM_B8_LABS" && id != "SM_B9_SFA1" && id != "SM_B9_SFA2" && id != "SM_HABITAT" && id != "SL_B11_28")
             {
-                if (id.Contains("SOUNDMETER"))
-                {
-                    Console.WriteLine("-- Validar nuevos sensores: \n");
-                    Console.WriteLine("-- ID: " + id);
-                    Console.WriteLine(json);
-                    Console.WriteLine();
-                }
+                
                 
             }
+            */
 
-                var content = new StringContent(json, Encoding.UTF8, "application/json");
+            if (id.Contains("SENSOR"))
+            {
+                Console.WriteLine("-- Validar nuevos sensores: \n");
+                Console.WriteLine("-- ID: " + id);
+                Console.WriteLine(json);
+                Console.WriteLine();
+            }
+
+            var content = new StringContent(json, Encoding.UTF8, "application/json");
 
             try
             {
@@ -421,17 +425,17 @@ namespace DataManager
 
                 respuesta.EnsureSuccessStatusCode();
                 var jsonResponse = await respuesta.Content.ReadAsStringAsync();
-                if (id.Contains("SOUNDMETER"))
+                if (id.Contains("SENSOR"))
                 {
                     Console.WriteLine(respuesta);
                     Console.WriteLine();
                     Console.WriteLine(jsonResponse);
                 }
-                    
-             
+
             }
             catch (Exception e)
             {
+                //Console.WriteLine(e.Message);
                 //throw new Exception("Error al actualizar la entidad: " + id + " con error: " + e.Message);
             }
         }
